@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<% if(headers.length > 0){ %>
+<% headers.forEach(function(header){ %>
+<%- include("../partials/"+header.files) %>
+<% }) %>
+<% }else{ %>
+<% } %>
+</head>
+<body>
+<%- include ('../partials/header1.ejs') %>
+<%- include ('../partials/fade1.ejs') %>
+<br /><br /> <br /><br />
+<main class="main">
+<%- body %>
+</main>
+  <aside class="modal hide" id="modal"></aside>
+<% if(bottomscripts.length > 0){ %>
+<% bottomscripts.forEach(function(bottomscript){ %>
+<%- include("../partials/"+bottomscript.files) %>
+<% }) %>
+<% }else{ %>  
+  <!-- tester-->
+<% } %>
+<%- include ('../partials/script1.ejs') %>
+</body>
+</html>

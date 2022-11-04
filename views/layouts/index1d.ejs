@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<% if(headers.length > 0){ %>
+<% headers.forEach(function(header){ %>
+<%- include("../partials/"+header.files) %>
+<% }) %>
+<% }else{ %>
+<% } %>
+<style>
+input {
+    width: 100%;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    height: 50px;
+}
+textarea{
+  width: 100%;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    height: 100px;
+}
+</style>
+</head>
+<body>
+<main class="main">
+<%- body %>
+</main>
+  <aside class="modal hide" id="modal"></aside>
+<% if(bottomscripts.length > 0){ %>
+<% bottomscripts.forEach(function(bottomscript){ %>
+<%- include("../partials/"+bottomscript.files) %>
+<% }) %>
+<% }else{ %>  
+  <!-- tester-->
+<% } %>
+<%- include ('../partials/script1.ejs') %>
+</body>
+</html>

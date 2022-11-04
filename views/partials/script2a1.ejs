@@ -1,0 +1,285 @@
+<script id="rendered-js" >
+    const form = document.querySelector('#form'),
+    modal = document.querySelector('#modal'),
+    inputs = form.querySelectorAll('.input'),
+    rules = form.querySelectorAll('.rule'),
+    errors = form.querySelectorAll('.error');
+    
+    const data = {
+    firstname: '',
+    lastname: '',
+    email: '',
+    companyname: '',
+    url: '',
+    contact: '',
+    sector: ''};
+    
+    
+    function validate()
+    {
+    
+    var error="";
+    
+    var designer_id = document.getElementById( "designer_id" );
+    if( designer_id.value == "" )
+    {
+    error = " Please Select Designer";
+    document.getElementById( "error_para1" ).innerHTML = error;
+    return false;
+    }
+    
+    var error="";
+    var designerorder_id = document.getElementById( "designerorder_id" );
+    if( designerorder_id.value == "" )
+    {
+    error = " Please Select Order";
+    document.getElementById( "error_para2" ).innerHTML = error;
+    return false;
+    }
+    
+    
+    var error="";
+    var dproduct_id = document.getElementById( "dproduct_id" );
+    
+    if( dproduct_id.value == "" )
+    {
+    error = " Please Select Product";
+    document.getElementById( "error_para3" ).innerHTML = error;
+    return false;
+    }
+    
+    alert("All Good");
+    
+    }
+    
+    function isInputValid(event) {
+    const target = event.target;
+    const name = target.name;
+    const parent = target.closest('.form__item');
+    const value = target.value;
+    const error = parent.querySelector('.error');
+    
+    if (target.matches('.input-error')) {
+    error.classList.remove('show-error');
+    target.classList.remove('input-error');
+    }
+    
+    if (name === 'firstname' || name === 'lastname' ) {
+    isValidName(parent, value, name);
+    }
+    
+    if (name === 'companyname' || name === 'contact') {
+    isValidNamea(parent, value, name);
+    }
+    
+    if (name === 'email') {
+    isValidEmail(parent, value);
+    }
+    
+    if (name === 'url') {
+    validURL(parent, value, name);
+    }
+    
+    if (name === 'sector') {
+    isValidNameb(parent, value, name);
+    }
+    
+    }
+    
+    function isValidNamea(parent, value, name) {
+    const rule = parent.querySelector(`.${name}-rule`);
+    
+    if (value.length > 0) {
+    rule.classList.add('valid');
+    data[name] = value.trim();
+    } else {
+    rule.classList.remove('valid');
+    data[name] = '';
+    }
+    }
+    
+    function isValidNameb(parent, value, name) {
+    const rule = parent.querySelector('.sector-rule');
+    
+    if(value.length > 0) {
+    rule.classList.add('valid');
+    data[name] = value.trim();
+    } else {
+    rule.classList.remove('valid');
+    data[name] = '';
+    }
+    }
+    /*
+    function isValidNamec(parent, value, name) {
+    const rule = parent.querySelector('.other-rule');
+    
+    if(1 > 0) {
+    rule.classList.add('valid');
+    data[name] = value.trim();
+    } else {
+    rule.classList.remove('valid');
+    data[name] = '';
+    }
+    
+    }
+    
+    
+    */
+    function isValidName(parent, value, name) {
+    const rule = parent.querySelector(`.${name}-rule`);
+    
+    if (value.length > 0 && !/[0-9]/.test(value)) {
+    rule.classList.add('valid');
+    data[name] = value.trim();
+    } else {
+    rule.classList.remove('valid');
+    data[name] = '';
+    }
+    }
+    
+    function isValidEmail(parent, value) {
+    const regex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
+    const rule = parent.querySelector('.email-rule');
+    
+    if (regex.test(value)) {
+    rule.classList.add('valid');
+    data.email = value;
+    } else {
+    rule.classList.remove('valid');
+    data.email = '';
+    }
+    }
+    
+    function validURL(parent, value) {
+    const regex = /(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g;
+    const rule = parent.querySelector('.url-rule');
+    
+    if (regex.test(value)) {
+    rule.classList.add('valid');
+    data.url = value;
+    } else {
+    rule.classList.remove('valid');
+    data.url = '';
+    }
+    }
+    
+    function removeShakeAnimation() {
+    rules.forEach(rule => rule.classList.remove('shake'));
+    errors.forEach(error => error.classList.remove('shake'));
+    inputs.forEach(input => input.classList.remove('shake'));
+    }
+    
+    function showModal(data) {
+    const {firstname, lastname, email, companyname, url, sector, other, wallet, description, contact} = data;
+    const out = `<div class="modal-content">
+    <!--   <p>Company Name: <span>${other}</span></p>
+      <p>Company Name: <span>${companyname}</span></p>
+      <p>Company Name: <span>${url}</span></p>
+      <p>Firstname: <span>${firstname}</span></p>
+      <p>Lastname: <span>${lastname}</span></p>
+      <p>Email: <span>${email}</span></p>
+      <button class="modal-btn">OK</button>-->
+      By Clicking on the OK Button you will be adreing to our terms and conductions
+      <button class="modal-btn" id="upload23" value="Upload">OK</button><button class="btn">Cancel</button>
+    
+    </div>`;
+    
+    modal.innerHTML = out;
+    modal.classList.remove('hide');
+    }
+    
+    inputs.forEach(input => input.addEventListener('input', isInputValid));
+    
+    form.addEventListener('submit', e => {
+    e.preventDefault();
+    const values = Object.values(data);
+    
+    if (values.every(Boolean)) {
+    //inputs.forEach(input => input.value = '');
+    rules.forEach(rule => rule.classList.remove('valid'));
+    
+    showModal(data);
+    } else {
+    rules.forEach(rule => {
+    if (!rule.classList.contains('valid')) {
+    rule.classList.add('shake');
+    }
+    });
+    
+    inputs.forEach(input => {
+    if (input.value === '') {
+    const parent = input.closest('.form__item');
+    const error = parent.querySelector('.error');
+    
+    error.classList.add('show-error', 'shake');
+    input.classList.add('input-error', 'shake');
+    }
+    });
+    
+    setTimeout(removeShakeAnimation, 1000);
+    }
+    });
+    
+    modal.addEventListener('click', e => {
+    const btn = e.target.matches('.modal-btn');
+    
+    if (!btn) return;
+    
+    modal.classList.add('hide');
+    
+    Object.keys(data).forEach(key => data[key] = '');
+    });
+    
+    
+    $(function() {
+    var update = function() {
+    $('#serializearray').text(        
+    JSON.stringify($('form').serializeArray())
+    );
+    $('#serialize').text(        
+    JSON.stringify($('form').serialize())
+    );
+    };
+    update();
+    $('form').change(update);
+    })
+    
+    //$(document).on("change", "#avatar", function() {   // If you want to upload without a submit button 
+    $(document).on("click", "#upload23", function() {
+    var dataArray = $("form").serializeArray(),
+    dataObj = {};
+    $(dataArray).each(function(i, field){dataObj[field.name] = field.value;});
+    // var data1 = JSON.stringify( $('form').serializeArray() );
+    //alert(dataObj['companyname']);
+    var form_data = new FormData(); // Creating object of FormData class
+    //logoinfo
+    //form_data.append("logo", file_data) // Appending parameter named file with properties of file_field to form_data
+    form_data.append("companyname", (dataObj['companyname'])) // Adding extra parameters to form_data
+    form_data.append("url", (dataObj['url'])) // Adding extra parameters to form_data
+    form_data.append("sector", (dataObj['sector'])) // Adding extra parameters to form_data
+    form_data.append("other", (dataObj['other'])) // Adding extra parameters to form_data
+    form_data.append("wallet", (dataObj['wallet'])) // Adding extra parameters to form_data
+    form_data.append("firstname", (dataObj['firstname'])) // Adding extra parameters to form_data
+    form_data.append("lastname", (dataObj['lastname'])) // Adding extra parameters to form_data
+    form_data.append("email", (dataObj['email'])) // Adding extra parameters to form_data
+    form_data.append("contact", (dataObj['contact'])) // Adding extra parameters to form_data
+    form_data.append("description", (dataObj['description'])) // Adding extra parameters to form_data
+    //  console.log(data1);
+    $.ajax({
+    url: "/uploadfileb", // Upload Script
+    dataType: 'json',
+    cache: false,
+    contentType: false,
+    processData: false,
+    data: form_data, // Setting the data attribute of ajax with file_data
+    type: 'post',
+    success: function(data) {
+    // Do something after Ajax completes 
+    // window.open("/applygrid");
+    console.log(data);
+    window.location.replace("/applygrid?id="+ data.cid);
+    }
+    });
+    });
+    
+    </script>

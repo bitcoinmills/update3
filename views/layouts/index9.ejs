@@ -1,0 +1,792 @@
+<html>
+<head>
+<meta charset="utf-8">
+<script src="/js/jquery-1.8.3.js"></script>
+<script>
+$(document).ready(function() {
+$.ajax({
+url: "/js/main2.js",
+dataType: "script",
+cache: true
+});
+});
+$(document).ready(function() {
+var w = $(window).width();  
+if(w < 1200) {  
+$('#nav').hide();
+$('#nav1').show();  
+}else{
+$('#nav').show();
+$('#nav1').hide();
+} 
+$(window).resize(function(){  
+var w = $(window).width();  
+if(w < 1200) {  
+$('#nav').hide();
+$('#nav1').show();  
+}else{
+$('#nav').show();
+$('#nav1').hide();
+}  
+});
+
+});
+
+</script>
+<style class="INLINE_PEN_STYLESHEET_ID">
+@import url(https://fonts.googleapis.com/css?family=Ek+Mukta:200);
+
+
+
+.header {
+position: absolute;
+display: block;
+top: 0;
+left: 0;
+height: 50px;
+width: 100%;
+min-width: 1000px;
+background: rgba(0, 0, 0, 0.8);
+overflow: hidden;
+transition: all 0.5s ease-out, background 1s ease-out;
+transition-delay: 0.2s;
+z-index: 4;
+}
+.header .burger-container {
+position: relative;
+display: inline-block;
+height: 50px;
+width: 50px;
+cursor: pointer;
+transform: rotate(0deg);
+transition: all 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+-webkit-tap-highlight-color: transparent;
+}
+.header .burger-container #burger {
+width: 28px;
+height: 8px;
+position: relative;
+display: block;
+margin: -4px auto 0;
+top: 50%;
+}
+.header .burger-container #burger .bar {
+width: 100%;
+height: 1px;
+display: block;
+position: relative;
+background: #FFF;
+transition: all 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+transition-delay: 0s;
+}
+.header .burger-container #burger .bar.topBar {
+transform: translateY(0px) rotate(0deg);
+}
+.header .burger-container #burger .bar.btmBar {
+transform: translateY(6px) rotate(0deg);
+}
+.header .icon {
+display: inline-block;
+position: absolute;
+height: 100%;
+line-height: 50px;
+width: 50px;
+height: 50px;
+text-align: center;
+color: #FFF;
+font-size: 22px;
+left: 50%;
+transform: translateX(-50%);
+}
+.header .header-icon {
+display: inline-block;
+position: absolute;
+
+line-height: 50px;
+width: 171px;
+height: 50px;
+text-align: center;
+color: #FFF;
+font-size: 22px;
+left: 50%;
+transform: translateX(-50%);
+}
+.header .icon.icon-bag {
+right: 0;
+top: 0;
+left: auto;
+transform: translateX(0px);
+transition: transform 0.5s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+transition-delay: 0.65s;
+}
+.header ul.menu {
+position: relative;
+display: block;
+padding: 0px 48px 0;
+list-style: none;
+}
+.header ul.menu li.menu-item {
+border-bottom: 1px solid #333;
+margin-top: 5px;
+transform: scale(1.15) translateY(-30px);
+opacity: 0;
+transition: transform 0.5s cubic-bezier(0.4, 0.01, 0.165, 0.99), opacity 0.6s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+}
+.header ul.menu li.menu-item1:nth-child(1) {
+transition-delay: 0.49s;
+}
+.header ul.menu li.menu-item1:nth-child(2) {
+transition-delay: 0.42s;
+}
+.header ul.menu li.menu-item1:nth-child(3) {
+transition-delay: 0.35s;
+}
+.header ul.menu li.menu-item1:nth-child(4) {
+transition-delay: 0.28s;
+}
+.header ul.menu li.menu-item1:nth-child(5) {
+transition-delay: 0.21s;
+}
+.header ul.menu li.menu-item1:nth-child(6) {
+transition-delay: 0.14s;
+}
+.header ul.menu li.menu-item1:nth-child(7) {
+transition-delay: 0.07s;
+}
+.header ul.menu li.menu-item1 a {
+display: block;
+position: relative;
+color: #FFF;
+font-family: "Ek Mukta", sans-serif;
+font-weight: 100;
+text-decoration: none;
+font-size: 50px !important;
+line-height: 2.35;
+font-weight: 200;
+width: 100%;
+}
+.header.menu-opened {
+height: 120%;
+background-color: #000;
+transition: all 0.3s ease-in, background 0.5s ease-in;
+transition-delay: 0.25s;
+}
+.header.menu-opened .burger-container {
+transform: rotate(90deg);
+}
+.header.menu-opened .burger-container #burger .bar {
+transition: all 0.4s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+transition-delay: 0.2s;
+}
+.header.menu-opened .burger-container #burger .bar.topBar {
+transform: translateY(4px) rotate(45deg);
+}
+.header.menu-opened .burger-container #burger .bar.btmBar {
+transform: translateY(3px) rotate(-45deg);
+}
+.header.menu-opened ul.menu li.menu-item1 {
+transform: scale(1) translateY(0px);
+opacity: 1;
+}
+.header.menu-opened ul.menu li.menu-item1:nth-child(1) {
+transition-delay: 0.27s;
+}
+.header.menu-opened ul.menu li.menu-item1:nth-child(2) {
+transition-delay: 0.34s;
+}
+.header.menu-opened ul.menu li.menu-item1:nth-child(3) {
+transition-delay: 0.41s;
+}
+.header.menu-opened ul.menu li.menu-item1:nth-child(4) {
+transition-delay: 0.48s;
+}
+.header.menu-opened ul.menu li.menu-item1:nth-child(5) {
+transition-delay: 0.55s;
+}
+.header.menu-opened ul.menu li.menu-item1:nth-child(6) {
+transition-delay: 0.62s;
+}
+.header.menu-opened ul.menu li.menu-item1:nth-child(7) {
+transition-delay: 0.69s;
+}
+.header.menu-opened .icon.icon-bag {
+transform: translateX(75px);
+transition-delay: 0.3s;
+}
+
+@media (max-width: 600px) {
+{
+width: 100%;
+height: 100vh;
+margin: 0;
+border-radius: 0px;
+}
+.header {
+position: fixed;
+}
+}
+</style>
+<title><%- title %></title>
+<meta charset="utf-8">
+<meta data-hid="description" name="description" content="The Pixillion Homepage. A glimpse into what the future of web.">
+<meta name="twitter:card" content="summary">
+<meta property="og:url" content="https://pixillion.herokuapp.com/">
+<meta property="og:title" content="The Pixillion Homepage">
+<meta property="og:description" content="The Pixillion Homepage. A glimpse into what the future of web.">
+<meta property="og:image" content="https://pixillion.herokuapp.com/images/pixillion02.png">
+<link rel="icon" type="image/x-icon" href="/images/pixillion02.png">
+<link rel="stylesheet" type="text/css" href="/css/style2a.css" />
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css'>
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"> </script>
+
+<link rel="stylesheet" href="/css/colorbox.css" />
+<script src="/js/jquery.colorbox.js"></script>
+<script>
+function burgershow() {
+header = document.querySelector('.header');
+header.classList.toggle('menu-opened');
+};
+var colors = [
+"#63b598", "#ce7d78", "#ea9e70", "#a48a9e", "#c6e1e8", "#648177", "#0d5ac1",
+"#f205e6", "#1c0365", "#14a9ad", "#4ca2f9", "#a4e43f", "#d298e2", "#6119d0",
+"#d2737d", "#c0a43c", "#f2510e", "#651be6", "#79806e", "#61da5e", "#cd2f00",
+"#9348af", "#01ac53", "#c5a4fb", "#996635", "#b11573", "#4bb473", "#75d89e",
+"#2f3f94", "#2f7b99", "#da967d", "#34891f", "#b0d87b", "#ca4751", "#7e50a8",
+"#c4d647", "#e0eeb8", "#11dec1", "#289812", "#566ca0", "#ffdbe1", "#2f1179",
+"#935b6d", "#916988", "#513d98", "#aead3a", "#9e6d71", "#4b5bdc", "#0cd36d",
+"#250662", "#cb5bea", "#228916", "#ac3e1b", "#df514a", "#539397", "#880977",
+"#f697c1", "#ba96ce", "#679c9d", "#c6c42c", "#5d2c52", "#48b41b", "#e1cf3b",
+"#5be4f0", "#57c4d8", "#a4d17a", "#be608b", "#96b00c", "#088baf", "#f158bf",
+"#e145ba", "#ee91e3", "#05d371", "#5426e0", "#4834d0", "#802234", "#6749e8",
+"#0971f0", "#8fb413", "#b2b4f0", "#c3c89d", "#c9a941", "#41d158", "#fb21a3",
+"#51aed9", "#5bb32d", "#21538e", "#89d534", "#d36647", "#7fb411", "#0023b8",
+"#3b8c2a", "#986b53", "#f50422", "#983f7a", "#ea24a3", "#79352c", "#521250",
+"#c79ed2", "#d6dd92", "#e33e52", "#b2be57", "#fa06ec", "#1bb699", "#6b2e5f",
+"#64820f", "#21538e", "#89d534", "#d36647", "#7fb411", "#0023b8", "#3b8c2a",
+"#986b53", "#f50422", "#983f7a", "#ea24a3", "#79352c", "#521250", "#c79ed2",
+"#d6dd92", "#e33e52", "#b2be57", "#fa06ec", "#1bb699", "#6b2e5f", "#64820f",
+"#9cb64a", "#996c48", "#9ab9b7", "#06e052", "#e3a481", "#0eb621", "#fc458e",
+"#b2db15", "#aa226d", "#792ed8", "#73872a", "#520d3a", "#cefcb8", "#a5b3d9",
+"#7d1d85", "#c4fd57", "#f1ae16", "#8fe22a", "#ef6e3c", "#243eeb", "#dd93fd",
+"#3f8473", "#e7dbce", "#421f79", "#7a3d93", "#635f6d", "#93f2d7", "#9b5c2a",
+"#15b9ee", "#0f5997", "#409188", "#911e20", "#1350ce", "#10e5b1", "#fff4d7",
+"#cb2582", "#ce00be", "#32d5d6", "#608572", "#c79bc2", "#00f87c", "#77772a",
+"#6995ba", "#fc6b57", "#f07815", "#8fd883", "#060e27", "#96e591", "#21d52e",
+"#d00043", "#b47162", "#1ec227", "#4f0f6f", "#1d1d58", "#947002", "#bde052",
+"#e08c56", "#28fcfd", "#36486a", "#d02e29", "#1ae6db", "#3e464c", "#a84a8f",
+"#911e7e", "#3f16d9", "#0f525f", "#ac7c0a", "#b4c086", "#c9d730", "#30cc49",
+"#3d6751", "#fb4c03", "#640fc1", "#62c03e", "#d3493a", "#88aa0b", "#406df9",
+"#615af0", "#2a3434", "#4a543f", "#79bca0", "#a8b8d4", "#00efd4", "#7ad236",
+"#7260d8", "#1deaa7", "#06f43a", "#823c59", "#e3d94c", "#dc1c06", "#f53b2a",
+"#b46238", "#2dfff6", "#a82b89", "#1a8011", "#436a9f", "#1a806a", "#4cf09d",
+"#c188a2", "#67eb4b", "#b308d3", "#fc7e41", "#af3101", "#71b1f4", "#a2f8a5",
+"#e23dd0", "#d3486d", "#00f7f9", "#474893", "#3cec35", "#1c65cb", "#5d1d0c",
+"#2d7d2a", "#ff3420", "#5cdd87", "#a259a4", "#e4ac44", "#1bede6", "#8798a4",
+"#d7790f", "#b2c24f", "#de73c2", "#d70a9c", "#88e9b8", "#c2b0e2", "#86e98f",
+"#ae90e2", "#1a806b", "#436a9e", "#0ec0ff", "#f812b3", "#b17fc9", "#8d6c2f",
+"#d3277a", "#2ca1ae", "#9685eb", "#8a96c6", "#dba2e6", "#76fc1b", "#608fa4",
+"#20f6ba", "#07d7f6", "#dce77a", "#77ecca"
+];
+var random_color = colors[Math.floor(Math.random() * colors.length)];
+
+function hideModal() {
+modal.classList.add('hide');
+};
+
+function tester34() {
+console.log('Testing tester34');
+};
+
+function showModal2() {
+
+var cidinfo3 = document.getElementById('cidinfo');
+var filenameinfo3 = document.getElementById('filenameinfo');
+var result123 = document.getElementById('result123').value;
+var result123a = document.getElementById('result123a').value;
+var result123b = document.getElementById('result123b').value;
+var result123c = document.getElementById('result123c').value;
+var cidinfo3 = cidinfo3.textContent;
+var filenameinfo3 = filenameinfo3.textContent;
+console.log(filenameinfo3 , cidinfo3, result123, result123a, result123b, result123c+ 'what the fuck...');
+const inner1 = `  <div id="toolbox1" class="modal-content1">
+<div style="width: 100%;text-align: right;">
+<a onclick="hideModal()" href="#"><i class="fa fa-close" style="margin-right: 5px !important;"></i></a>
+</div>
+<iframe src="/test3?logo=`+filenameinfo3+`&cid=`+cidinfo3+
+`&result123=`+result123+`&result123a=`+result123a+`&result123b=`+result123b+`&result123c=`+result123c+`" style="border:none; min-width: 850px; height: 100%">
+</iframe></div>`;
+
+modal.innerHTML = inner1;
+modal.classList.remove('hide');
+};
+
+
+
+
+<%-`let rectData =
+[`%><% for (var i = 0; i < results.length; i++) { %>
+<% if(results[i].approved !== false){ %><%-`[`%><%= results[i].width%><%-`,`%><%= results[i].height%><%-`,`%> <%= results[i].Coordinatesy%>,<%= results[i].Coordinatesx%>, colors[Math.floor(Math.random() * colors.length)], "https://<%= results[i].cid%>.ipfs.nftstorage.link/<%= results[i].image%>", "<%= results[i].url%>"],
+<% } else { %>[<%= results[i].width%>,<%= results[i].height%>, <%= results[i].Coordinatesy%>,<%= results[i].Coordinatesx%>, colors[Math.floor(Math.random() * colors.length)], "/images/pending.gif", "#"],
+<% } %><% } %><%-'];'%>
+
+</script>
+<script src="https://code.jquery.com/jquery-3.6.1.js" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/fabric17.js"></script>
+<script id="insert"></script>
+
+<script src="/js/stringify.js" charset="utf-8"></script>
+<script>
+function updateMeasures(evt) {
+var obj = evt.target;
+if (obj.type != 'group') {
+return;
+}
+var width = obj.getWidth();
+var height = obj.getWidth();
+obj._objects[1].text = width.toFixed(2) + 'px';
+obj._objects[1].scaleX= 1 / obj.scaleX;
+obj._objects[1].scaleY= 1 / obj.scaleY;
+obj._objects[2].text = height.toFixed(2) + 'px';
+obj._objects[2].scaleX= 1 / obj.scaleY;
+obj._objects[2].scaleY= 1 / obj.scaleX;
+}
+
+</script>
+</head>
+<body>
+
+
+<script>
+
+$(function() {
+
+var toolbox = $('#toolbox'),
+height = toolbox.height(),
+scrollHeight = toolbox.get(0).scrollHeight;
+
+toolbox.bind('mousewheel', function(e, d) {
+if((this.scrollTop === (scrollHeight - height) && d < 0) || (this.scrollTop === 0 && d > 0)) {
+e.preventDefault();
+}
+});
+
+});
+</script>
+
+
+
+<%- include ('../partials/header1a.ejs') %>
+<%- include ('../partials/fade1.ejs') %>
+
+<script src='/js/jquery2.min.js'></script>
+<script id="rendered-js" >
+const form = document.querySelector('#form'),
+//modal = document.querySelector('#modal'),
+inputs = form.querySelectorAll('.input'),
+rules = form.querySelectorAll('.rule'),
+errors = form.querySelectorAll('.error');
+
+const data = {
+firstname: '',
+lastname: '',
+email: '',
+companyname: '',
+url: '',
+logo: '',
+contact: '',
+sector: ''};
+
+function showdata(){
+var x = document.getElementById("form").elements.length;
+// var form = new FormData(document.getElementById("form"));
+// var inputValue = form.get("firstname").value;
+console.log(x);
+}
+
+function isInputValid(event) {
+const target = event.target;
+const name = target.name;
+const parent = target.closest('.form__item');
+const value = target.value;
+const error = parent.querySelector('.error');
+
+if (target.matches('.input-error')) {
+error.classList.remove('show-error');
+target.classList.remove('input-error');
+}
+
+if (name === 'firstname' || name === 'lastname' ) {
+isValidName(parent, value, name);
+}
+
+if (name === 'companyname' || name === 'logo' || name === 'contact') {
+isValidNamea(parent, value, name);
+}
+
+if (name === 'email') {
+isValidEmail(parent, value);
+}
+
+if (name === 'url') {
+validURL(parent, value, name);
+}
+
+if (name === 'sector') {
+isValidNameb(parent, value, name);
+}
+
+}
+
+function isValidNamea(parent, value, name) {
+const rule = parent.querySelector(`.${name}-rule`);
+
+if (value.length > 0) {
+rule.classList.add('valid');
+data[name] = value.trim();
+} else {
+rule.classList.remove('valid');
+data[name] = '';
+}
+}
+
+function isValidNameb(parent, value, name) {
+const rule = parent.querySelector('.sector-rule');
+
+if(value.length > 0) {
+rule.classList.add('valid');
+data[name] = value.trim();
+} else {
+rule.classList.remove('valid');
+data[name] = '';
+}
+}
+/*
+function isValidNamec(parent, value, name) {
+const rule = parent.querySelector('.other-rule');
+
+if(1 > 0) {
+rule.classList.add('valid');
+data[name] = value.trim();
+} else {
+rule.classList.remove('valid');
+data[name] = '';
+}
+
+}
+
+
+*/
+function isValidName(parent, value, name) {
+const rule = parent.querySelector(`.${name}-rule`);
+
+if (value.length > 0 && !/[0-9]/.test(value)) {
+rule.classList.add('valid');
+data[name] = value.trim();
+} else {
+rule.classList.remove('valid');
+data[name] = '';
+}
+}
+
+function isValidEmail(parent, value) {
+const regex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
+const rule = parent.querySelector('.email-rule');
+
+if (regex.test(value)) {
+rule.classList.add('valid');
+data.email = value;
+} else {
+rule.classList.remove('valid');
+data.email = '';
+}
+}
+
+function validURL(parent, value) {
+const regex = /(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g;
+const rule = parent.querySelector('.url-rule');
+
+if (regex.test(value)) {
+rule.classList.add('valid');
+data.url = value;
+} else {
+rule.classList.remove('valid');
+data.url = '';
+}
+}
+
+function removeShakeAnimation() {
+rules.forEach(rule => rule.classList.remove('shake'));
+errors.forEach(error => error.classList.remove('shake'));
+inputs.forEach(input => input.classList.remove('shake'));
+}
+
+function showModal(data) {
+const {firstname, lastname, email, companyname, url, sector, other, wallet, logo, description, contact} = data;
+const out = `<div class="modal-content">
+<!--   <p>Company Name: <span>${other}</span></p>
+<p>Company Name: <span>${companyname}</span></p>
+<p>Company Name: <span>${url}</span></p>
+<p>Firstname: <span>${firstname}</span></p>
+<p>Lastname: <span>${lastname}</span></p>
+<p>Email: <span>${email}</span></p>
+<button class="modal-btn">OK</button>-->
+By Clicking on the OK Button you will be adreing to our terms and conductions
+<button class="modal-btn" id="upload23" value="Upload">OK</button><button class="btn">Cancel</button>
+
+</div>`;
+
+modal.innerHTML = out;
+modal.classList.remove('hide');
+}
+
+inputs.forEach(input => input.addEventListener('input', isInputValid));
+
+form.addEventListener('submit', e => {
+e.preventDefault();
+const values = Object.values(data);
+
+if (values.every(Boolean)) {
+//inputs.forEach(input => input.value = '');
+rules.forEach(rule => rule.classList.remove('valid'));
+
+showModal(data);
+} else {
+rules.forEach(rule => {
+if (!rule.classList.contains('valid')) {
+rule.classList.add('shake');
+}
+});
+
+inputs.forEach(input => {
+if (input.value === '') {
+const parent = input.closest('.form__item');
+const error = parent.querySelector('.error');
+
+error.classList.add('show-error', 'shake');
+input.classList.add('input-error', 'shake');
+}
+});
+
+setTimeout(removeShakeAnimation, 1000);
+}
+});
+
+modal.addEventListener('click', e => {
+const btn = e.target.matches('.modal-btn');
+
+if (!btn) return;
+
+modal.classList.add('hide');
+
+Object.keys(data).forEach(key => data[key] = '');
+});
+
+
+$(function() {
+var update = function() {
+$('#serializearray').text(        
+JSON.stringify($('form').serializeArray())
+);
+$('#serialize').text(        
+JSON.stringify($('form').serialize())
+);
+};
+update();
+$('form').change(update);
+})
+
+//$(document).on("change", "#avatar", function() {   // If you want to upload without a submit button 
+$(document).on("click", "#upload23", function() {
+var file_data = $("#imgInp").prop("files")[0]; // Getting the properties of file from file field
+var dataArray = $("form").serializeArray(),
+dataObj = {};
+$(dataArray).each(function(i, field){dataObj[field.name] = field.value;});
+// var data1 = JSON.stringify( $('form').serializeArray() );
+//alert(dataObj['companyname']);
+var form_data = new FormData(); // Creating object of FormData class
+form_data.append("logo", file_data) // Appending parameter named file with properties of file_field to form_data
+form_data.append("companyname", (dataObj['companyname'])) // Adding extra parameters to form_data
+form_data.append("url", (dataObj['url'])) // Adding extra parameters to form_data
+form_data.append("sector", (dataObj['sector'])) // Adding extra parameters to form_data
+form_data.append("other", (dataObj['other'])) // Adding extra parameters to form_data
+form_data.append("wallet", (dataObj['wallet'])) // Adding extra parameters to form_data
+form_data.append("firstname", (dataObj['firstname'])) // Adding extra parameters to form_data
+form_data.append("lastname", (dataObj['lastname'])) // Adding extra parameters to form_data
+form_data.append("email", (dataObj['email'])) // Adding extra parameters to form_data
+form_data.append("contact", (dataObj['contact'])) // Adding extra parameters to form_data
+form_data.append("description", (dataObj['description'])) // Adding extra parameters to form_data
+//  console.log(data1);
+$.ajax({
+url: "/uploadfileb", // Upload Script
+dataType: 'json',
+cache: false,
+contentType: false,
+processData: false,
+data: form_data, // Setting the data attribute of ajax with file_data
+type: 'post',
+success: function(data) {
+// Do something after Ajax completes 
+// window.open("/applygrid");
+console.log(data);
+window.location.replace("/applygrid?id="+ data.cid);
+}
+});
+});
+
+</script>
+<script id="rendered-js" >
+
+(function () {
+
+'use strict';
+
+var $searchView = $('.menu-search-container');
+var $menu = $('.menu-mac, .menu-iPad, .menu-iPhone, .menu-watch, .menu-tv, .menu-support, .menu-search, .menu-store');
+var $fadeScreen = $('.fade-screen');
+
+$('li.menu-search a, .fade-screen, .menu-search-close').on('click', function (e) {
+
+$searchView.toggleClass('active');
+
+setTimeout(function () {
+$searchView.children().find('input').focus();
+}, 1100);
+
+$fadeScreen.toggleClass('visible');
+$menu.removeClass('is-closed');
+$menu.toggleClass('hidden');
+
+e.preventDefault();
+});
+
+$('.fade-screen,.menu-search-close').on('click', function (e) {
+$menu.toggleClass('is-closed');
+e.preventDefault();
+});
+
+})();
+
+
+
+</script>
+
+<br /><br /><br />
+
+
+<script type='text/javascript' src='/js/intercet.js'></script>
+
+<div id="app" class="container" style="font-family: 'Recursive', sans-serif !important;font-size: 1.1rem !important; margin: auto;">
+<div class="container">
+<div><br /><br /><br /><br /></div>
+
+<form id="form1" action="#">
+
+<div class="container-fluid grid">
+
+<div class="row pull-center">
+<div class="col-md-4">
+
+<div class="well">
+
+<div class="row card">
+</div>
+
+<br/>
+
+<div class="row-fluid">
+<div class="col-md-8">
+<div class="form-group">
+  <label>Credit Card Number </label>
+  <input type="text" name="number" class="form-control" />
+</div>
+</div>
+<div class="col-md-4">
+<div class="form-group">
+  <label>Expiration</label>
+
+  <input type="text" placeholder="MM/YY" name="expiry" class="form-control" />
+
+</div>
+</div>
+</div>
+
+<div class="row-fluid">
+<div class="col-md-8">
+<div class="form-group">
+  <label>Name</label>
+  <input type="text" name="name" class="form-control" />
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="form-group">
+
+  <label>CVV </label>
+
+  <input type="text" name="cvv" class="form-control" />
+</div>
+</div>
+</div>
+
+<div class="row ">
+
+<div class="col-md-12 text-right">
+<button type="button"  onclick="location.href='/recipt';" class="btn btn-success">Submit</button>
+<button type="button" class="btn btn-info">Clear</button>
+</div>
+
+</div>
+
+</div>
+</div>
+</div>
+
+</form>
+
+<script src='/js/jquery1.min.js'></script>
+<script src='/js/bootstrap1.min.js'></script>
+<script src='/js/card.min.js'></script>
+<script id="rendered-js" >
+new Card({
+form: '#form1',
+container: '.card',
+formSelectors: {
+numberInput: 'input[name=number]',
+expiryInput: 'input[name=expiry]',
+cvcInput: 'input[name=cvv]',
+nameInput: 'input[name=name]' },
+
+
+width: 390, // optional — default 350px
+formatting: true,
+
+placeholders: {
+number: '•••• •••• •••• ••••',
+name: 'Full Name',
+expiry: '••/••',
+cvc: '•••' } });
+
+</script>
+
+
+
+
+
+<!----> <section><!----></section></div> 
+
+
+
+</div> 
+
+</body>
+
+</html>

@@ -1,0 +1,2405 @@
+
+
+
+<html>
+    <head>
+    <meta charset="utf-8">
+    <script src="/js/jquery-1.8.3.js"></script>
+    <title>About Page</title>
+    <meta charset="utf-8">
+    <meta data-hid="description" name="description" content="The Pixillion Homepage. A glimpse into what the future of web.">
+    <meta name="twitter:card" content="summary">
+    <meta property="og:url" content="https://pixillion.herokuapp.com/">
+    <meta property="og:title" content="The Pixillion Homepage">
+    <meta property="og:description" content="The Pixillion Homepage. A glimpse into what the future of web.">
+    <meta property="og:image" content="https://pixillion.herokuapp.com/images/pixillion02.png">
+    <link rel="icon" type="image/x-icon" href="/images/pixillion02.png">
+    <link rel="stylesheet" type="text/css" href="/css/style2.css" />
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css'>
+        <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+ <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"> </script>
+ <script defer src="/js/customiseControls1.js"></script>
+   <script>
+   
+   $(document).ready(function() {
+    $("#box").hide();
+     $("#hide").click(function() {
+         $("#box").hide();
+     });
+
+     $("#show").click(function() {
+         $("#box").show();
+     });
+
+     $("#toggle").click(function() {
+         $("#box").toggle();
+     });
+     
+     $("#hide-3000").click(function() {
+         $("#box").hide(3000);
+     });
+
+     $("#show-3000").click(function() {
+         $("#box").show(3000);
+     });
+            
+     $("#toggle-3000").click(function() {
+        $("#box").toggle(3000);
+     });
+
+     $("#hide-slow").click(function() {
+         $("#box").hide("slow");
+     });
+
+     $("#show-slow").click(function() {
+          $("#box").show("slow");
+     });
+          
+     $("#toggle-slow").click(function() {
+          $("#box").toggle("slow");
+     });
+});
+
+   </script>
+      <style>
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
+
+      @import url('https://fonts.googleapis.com/css2?family=Recursive&display=swap');
+      .vh {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+  
+  .fade-screen {
+    background: rgba(0, 0, 0, 0.2);
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+  }
+  
+  @-webkit-keyframes specialFadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes specialFadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  .specialFadeIn {
+    -webkit-animation-name: specialFadeIn;
+            animation-name: specialFadeIn;
+  }
+  
+  @-webkit-keyframes specialFadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+  }
+  
+  @keyframes specialFadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+  }
+  .specialFadeOut {
+    -webkit-animation-name: specialFadeOut;
+            animation-name: specialFadeOut;
+  }
+  
+  @-webkit-keyframes specialSlideInRight {
+    from {
+      transform: translate3d(10%, 0, 0);
+      visibility: visible;
+    }
+    to {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  
+  @keyframes specialSlideInRight {
+    from {
+      transform: translate3d(10%, 0, 0);
+      visibility: visible;
+    }
+    to {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  .specialSlideInRight {
+    -webkit-animation-name: specialSlideInRight;
+            animation-name: specialSlideInRight;
+  }
+  
+  @-webkit-keyframes specialFadeInRight {
+    from {
+      opacity: 0;
+      transform: translate3d(10%, 0, 0);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  
+  @keyframes specialFadeInRight {
+    from {
+      opacity: 0;
+      transform: translate3d(10%, 0, 0);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  .spceialFadeInRight {
+    -webkit-animation-name: specialFadeInRight;
+            animation-name: specialFadeInRight;
+  }
+  
+  .menu-search-container.active {
+    display: block;
+    -webkit-animation-name: specialFadeOut;
+            animation-name: specialFadeOut;
+    transition: opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+  
+  .visible {
+    visibility: visible;
+  }
+  
+  .hidden {
+    display: none;
+    transition: opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+  
+  .menu ul li {
+    transition: opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+  
+  .menu-mac.is-closed {
+    -webkit-animation-name: specialFadeIn;
+            animation-name: specialFadeIn;
+    -webkit-animation-delay: 30ms;
+            animation-delay: 30ms;
+    -webkit-animation-duration: 400ms;
+            animation-duration: 400ms;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+  }
+  .menu-mac.hidden {
+    -webkit-animation-name: specialFadeOut;
+            animation-name: specialFadeOut;
+    -webkit-animation-delay: 245ms;
+            animation-delay: 245ms;
+    -webkit-animation-duration: 400ms;
+            animation-duration: 400ms;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+  }
+  
+  .menu-iPad.is-closed {
+    -webkit-animation-name: specialFadeIn;
+            animation-name: specialFadeIn;
+    -webkit-animation-delay: 70ms;
+            animation-delay: 70ms;
+    -webkit-animation-duration: 400ms;
+            animation-duration: 400ms;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+  }
+  .menu-iPad.hidden {
+    -webkit-animation-name: specialFadeOut;
+            animation-name: specialFadeOut;
+    -webkit-animation-delay: 210ms;
+            animation-delay: 210ms;
+    -webkit-animation-duration: 400ms;
+            animation-duration: 400ms;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+  }
+  
+  .menu-iPhone.is-closed {
+    -webkit-animation-name: specialFadeIn;
+            animation-name: specialFadeIn;
+    -webkit-animation-delay: 100ms;
+            animation-delay: 100ms;
+    -webkit-animation-duration: 400ms;
+            animation-duration: 400ms;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+  }
+  .menu-iPhone.hidden {
+    -webkit-animation-name: specialFadeOut;
+            animation-name: specialFadeOut;
+    -webkit-animation-delay: 170ms;
+            animation-delay: 170ms;
+    -webkit-animation-duration: 400ms;
+            animation-duration: 400ms;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+  }
+  
+  .menu-watch.is-closed {
+    -webkit-animation-name: specialFadeIn;
+            animation-name: specialFadeIn;
+    -webkit-animation-delay: 130ms;
+            animation-delay: 130ms;
+    -webkit-animation-duration: 400ms;
+            animation-duration: 400ms;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+  }
+  .menu-watch.hidden {
+    -webkit-animation-name: specialFadeOut;
+            animation-name: specialFadeOut;
+    -webkit-animation-delay: 130ms;
+            animation-delay: 130ms;
+    -webkit-animation-duration: 400ms;
+            animation-duration: 400ms;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+  }
+  
+  .menu-tv.is-closed {
+    -webkit-animation-name: specialFadeIn;
+            animation-name: specialFadeIn;
+    -webkit-animation-delay: 170ms;
+            animation-delay: 170ms;
+    -webkit-animation-duration: 400ms;
+            animation-duration: 400ms;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+  }
+  .menu-tv.hidden {
+    -webkit-animation-name: specialFadeOut;
+            animation-name: specialFadeOut;
+    -webkit-animation-delay: 100ms;
+            animation-delay: 100ms;
+    -webkit-animation-duration: 400ms;
+            animation-duration: 400ms;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+  }
+  
+  .menu-support.is-closed {
+    -webkit-animation-name: specialFadeIn;
+            animation-name: specialFadeIn;
+    -webkit-animation-delay: 210ms;
+            animation-delay: 210ms;
+    -webkit-animation-duration: 400ms;
+            animation-duration: 400ms;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+  }
+  .menu-support.hidden {
+    -webkit-animation-name: specialFadeOut;
+            animation-name: specialFadeOut;
+    -webkit-animation-delay: 70ms;
+            animation-delay: 70ms;
+    -webkit-animation-duration: 400ms;
+            animation-duration: 400ms;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+  }
+  
+  .menu-search.is-closed {
+    -webkit-animation-name: specialFadeIn;
+            animation-name: specialFadeIn;
+    -webkit-animation-delay: 245ms;
+            animation-delay: 245ms;
+    -webkit-animation-duration: 400ms;
+            animation-duration: 400ms;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+  }
+  .menu-search.hidden {
+    -webkit-animation-name: specialFadeOut;
+            animation-name: specialFadeOut;
+    -webkit-animation-delay: 30ms;
+            animation-delay: 30ms;
+    -webkit-animation-duration: 400ms;
+            animation-duration: 400ms;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+  }
+  
+  .menu-store.is-closed {
+    -webkit-animation-name: specialFadeIn;
+            animation-name: specialFadeIn;
+    -webkit-animation-duration: 400ms;
+            animation-duration: 400ms;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+  }
+  .menu-store.hidden {
+    -webkit-animation-name: specialFadeOut;
+            animation-name: specialFadeOut;
+    -webkit-animation-duration: 400ms;
+            animation-duration: 400ms;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+  }
+  
+  .menu-search-input {
+    -webkit-animation-name: specialFadeInRight;
+            animation-name: specialFadeInRight;
+    -webkit-animation-duration: 400ms;
+            animation-duration: 400ms;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+    -webkit-animation-delay: 350ms;
+            animation-delay: 350ms;
+  }
+  
+  .search-sub-menu h3 {
+    -webkit-animation-name: specialFadeInRight;
+            animation-name: specialFadeInRight;
+    -webkit-animation-duration: 700ms;
+            animation-duration: 700ms;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+  }
+  
+  .search-sub-menu ul li {
+    -webkit-animation-name: specialFadeInRight;
+            animation-name: specialFadeInRight;
+    -webkit-animation-duration: 500ms;
+            animation-duration: 500ms;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+  }
+  .search-sub-menu ul li:nth-child(1) {
+    -webkit-animation-delay: 0ms;
+            animation-delay: 0ms;
+  }
+  .search-sub-menu ul li:nth-child(2) {
+    -webkit-animation-delay: 30ms;
+            animation-delay: 30ms;
+  }
+  .search-sub-menu ul li:nth-child(3) {
+    -webkit-animation-delay: 50ms;
+            animation-delay: 50ms;
+  }
+  .search-sub-menu ul li:nth-child(4) {
+    -webkit-animation-delay: 70ms;
+            animation-delay: 70ms;
+  }
+  .search-sub-menu ul li:nth-child(5) {
+    -webkit-animation-delay: 90ms;
+            animation-delay: 90ms;
+  }
+  
+  nav {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 48px;
+    min-width: 1000px;
+    background: rgba(0, 0, 0, 0.8);
+    font-size: 18px;
+    z-index: 2;
+  }
+  
+  .menu-container {
+    position: relative;
+    margin: 0 auto;
+   
+    max-width: 980px;
+  
+  }
+  .menu-container ul {
+    list-style: none;
+  }
+  .menu-container ul li {
+    display: inline-block;
+    text-align: center;
+    width: auto;
+    margin-right: 76px;
+  }
+  .menu-container ul li:last-child {
+    margin-right: 0;
+  }
+  .menu-container ul li a {
+    display: inline-block;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 100;
+    font-size: 16px;
+    float: left;
+  }
+  .menu-container ul li a:hover {
+    color: #969696;
+  }
+  .menu-container.menu-apple {
+    background-repeat: no-repeat;
+    width: 20px;
+  }
+  
+  .apple-icon {
+    font-size: 20px;
+  }
+  
+  .menu-search-container {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 20.6667%;
+    width: 56.66667%;
+    z-index: 2;
+  }
+  .menu-search-container input {
+    background-color: transparent;
+    border: none;
+    width: 80%;
+    font-size: 16px;
+    outline: none;
+    color: #fff;
+  }
+  .menu-search-container a {
+    color: #fff;
+  }
+  .menu-search-container a:first-child {
+    display: block;
+    float: left;
+    padding-right: 10px;
+  }
+  .menu-search-container.active {
+    display: block;
+  }
+  
+  .menu-search-close {
+    position: absolute;
+    right: -183px;
+    top: 0;
+  }
+  
+  .search-sub-menu {
+    background: #fff;
+    width: 100%;
+    margin-top: 14px;
+    color: #999;
+    font-weight: 100;
+    padding: 24px 0 15px;
+    z-index: 1;
+  }
+  .search-sub-menu h3 {
+    font-size: 12px;
+    font-weight: 100;
+    margin-top: 0;
+    padding-left: 28px;
+  }
+  .search-sub-menu ul {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+  .search-sub-menu ul li {
+    display: block;
+    text-align: left;
+    padding-bottom: 10px;
+    margin: 0;
+    text-indent: 50px;
+  }
+  .search-sub-menu ul li a {
+    font-size: 14px;
+    color: #999;
+    width: 100%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  .search-sub-menu ul li a:hover {
+    background-color: #f2f2f2;
+    color: #3392de;
+  }
+  .search-sub-menu ul li a:first-child {
+    float: none;
+    padding-right: 0;
+  }
+      
+      html {
+        box-sizing: border-box;
+      }
+      
+      *, *:before, *:after {
+        box-sizing: inherit;
+      }
+      
+      body {
+        font-family: 'Recursive', sans-serif;
+        font-size: 1.1rem;
+        position: relative;
+      }
+      
+      input {
+        width: 100%;
+        font-family: inherit;
+        font-size: 2rem !important;
+      }
+      
+      .main {
+        display: flex;
+        justify-content: center;
+        padding-top: 10px;
+      }
+      
+      .form {
+      min-width: 1000px;
+      }
+      
+      .form__item {
+        position: relative;
+      }
+      
+      .rule {
+        display: flex;
+        align-items: center;
+        font-size: 0.8rem;
+        margin: 0;
+        margin-bottom: 5px;
+        opacity: 0.5;
+      }
+      
+      .icon {
+        margin-right: 5px;
+      }
+      
+      .input {
+        padding: 7px;
+        border: 2px solid #dcdcdc;
+        border-radius: 5px;
+        margin-bottom: 5px;
+      }
+      
+      .input:focus {
+        border: 2px solid #8a307f;
+        outline: none;
+      }
+      
+      .fa-eye,
+      .fa-eye-slash {
+        position: absolute;
+        right: 10px;
+        transform: translateY(50%);
+        font-size: 1rem;
+        cursor: pointer;
+        color: #606060;
+      }
+      
+      .submit,
+      .modal-btn {
+        color: #fff;
+        cursor: pointer;
+        font-size: 1.1rem;
+        border: 0;
+        border-radius: 5px;
+        background-color: #8a307f;
+        padding: 10px;
+        margin-top: 10px;
+      }
+      
+      .valid {
+        opacity: 1;
+        color: #39a339;
+      }
+      
+      .check {
+        display: none;
+      }
+      
+      .valid .times {
+        display: none;
+      }
+      
+      .valid .check {
+        display: block;
+      }
+      
+      .shake {
+        animation: shake 0.5s;
+        animation-iteration-count: 1;
+      }
+      
+      .error {
+        font-size: 0.8rem;
+        color: #e31010;
+        display: none;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+      }
+      
+      .input-error {
+        border: 2px solid #e31010;
+      }
+      
+      .show-error {
+        display: inline-block;
+      }
+      
+      .modal {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 3;
+      }
+      
+      .hide {
+        display: none;
+      }
+      
+      .modal-content {
+        background-color: #fff;
+        display: inline-block;
+        min-width: 300px;
+        text-align: center;
+        padding: 15px;
+        border-radius: 5px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      
+      .modal p {
+        margin: 0;
+        margin-bottom: 10px;
+      }
+      #toolbox {
+    overflow: auto;
+    position: fixed;
+    top: 40%;
+   
+   
+    height: 60%;
+   
+  }
+      
+      .modal span {
+        text-decoration: underline;
+      }
+      
+      .modal-btn {
+        margin: 20px auto 0;
+        display: block;
+        padding: 5px 10px;
+        min-width: 70px;
+      }
+      
+      @-webkit-keyframes shake {
+        0% {-webkit-transform:translateX(0);transform:translateX(0)}
+        6.5% {-webki-transform:translateX(-6px)rotateY(-9deg); transform:translateX(-6px) rotateY(-9deg)}
+        18.5% {-webkit-transform:translateX(5px) rotateY(7deg);transform:translateX(5px) rotateY(7deg)}
+        31.5% {-webkit-transform:translateX(-3px) rotateY(-5deg);transform:translateX(-3px) rotateY(-5deg)}
+        43.5% {-webkit-transform:translateX(2px) rotateY(3deg);transform:translateX(2px) rotateY(3deg)}
+        50% {-webkit-transform:translateX(0);transform:translateX(0)}
+      }
+      
+      @keyframes shake {
+        0% {-webkit-transform:translateX(0);transform:translateX(0)}
+        6.5% {-webkit-transform:translateX(-6px) rotateY(-9deg);transform:translateX(-6px) rotateY(-9deg)}
+        18.5% {-webkit-transform:translateX(5px) rotateY(7deg);transform:translateX(5px) rotateY(7deg)}
+        31.5% {-webkit-transform:translateX(-3px) rotateY(-5deg);transform:translateX(-3px) rotateY(-5deg)}
+        43.5% {-webkit-transform:translateX(2px) rotateY(3deg);transform:translateX(2px) rotateY(3deg)}
+        50% {-webkit-transform:translateX(0);transform:translateX(0)}
+      }
+     </style>
+      
+      
+    <link rel="stylesheet" href="/css/colorbox.css" />
+    <script src="/js/jquery.colorbox.js"></script>
+    <script>
+    var colors = [
+    "#63b598", "#ce7d78", "#ea9e70", "#a48a9e", "#c6e1e8", "#648177", "#0d5ac1",
+    "#f205e6", "#1c0365", "#14a9ad", "#4ca2f9", "#a4e43f", "#d298e2", "#6119d0",
+    "#d2737d", "#c0a43c", "#f2510e", "#651be6", "#79806e", "#61da5e", "#cd2f00",
+    "#9348af", "#01ac53", "#c5a4fb", "#996635", "#b11573", "#4bb473", "#75d89e",
+    "#2f3f94", "#2f7b99", "#da967d", "#34891f", "#b0d87b", "#ca4751", "#7e50a8",
+    "#c4d647", "#e0eeb8", "#11dec1", "#289812", "#566ca0", "#ffdbe1", "#2f1179",
+    "#935b6d", "#916988", "#513d98", "#aead3a", "#9e6d71", "#4b5bdc", "#0cd36d",
+    "#250662", "#cb5bea", "#228916", "#ac3e1b", "#df514a", "#539397", "#880977",
+    "#f697c1", "#ba96ce", "#679c9d", "#c6c42c", "#5d2c52", "#48b41b", "#e1cf3b",
+    "#5be4f0", "#57c4d8", "#a4d17a", "#be608b", "#96b00c", "#088baf", "#f158bf",
+    "#e145ba", "#ee91e3", "#05d371", "#5426e0", "#4834d0", "#802234", "#6749e8",
+    "#0971f0", "#8fb413", "#b2b4f0", "#c3c89d", "#c9a941", "#41d158", "#fb21a3",
+    "#51aed9", "#5bb32d", "#21538e", "#89d534", "#d36647", "#7fb411", "#0023b8",
+    "#3b8c2a", "#986b53", "#f50422", "#983f7a", "#ea24a3", "#79352c", "#521250",
+    "#c79ed2", "#d6dd92", "#e33e52", "#b2be57", "#fa06ec", "#1bb699", "#6b2e5f",
+    "#64820f", "#21538e", "#89d534", "#d36647", "#7fb411", "#0023b8", "#3b8c2a",
+    "#986b53", "#f50422", "#983f7a", "#ea24a3", "#79352c", "#521250", "#c79ed2",
+    "#d6dd92", "#e33e52", "#b2be57", "#fa06ec", "#1bb699", "#6b2e5f", "#64820f",
+    "#9cb64a", "#996c48", "#9ab9b7", "#06e052", "#e3a481", "#0eb621", "#fc458e",
+    "#b2db15", "#aa226d", "#792ed8", "#73872a", "#520d3a", "#cefcb8", "#a5b3d9",
+    "#7d1d85", "#c4fd57", "#f1ae16", "#8fe22a", "#ef6e3c", "#243eeb", "#dd93fd",
+    "#3f8473", "#e7dbce", "#421f79", "#7a3d93", "#635f6d", "#93f2d7", "#9b5c2a",
+    "#15b9ee", "#0f5997", "#409188", "#911e20", "#1350ce", "#10e5b1", "#fff4d7",
+    "#cb2582", "#ce00be", "#32d5d6", "#608572", "#c79bc2", "#00f87c", "#77772a",
+    "#6995ba", "#fc6b57", "#f07815", "#8fd883", "#060e27", "#96e591", "#21d52e",
+    "#d00043", "#b47162", "#1ec227", "#4f0f6f", "#1d1d58", "#947002", "#bde052",
+    "#e08c56", "#28fcfd", "#36486a", "#d02e29", "#1ae6db", "#3e464c", "#a84a8f",
+    "#911e7e", "#3f16d9", "#0f525f", "#ac7c0a", "#b4c086", "#c9d730", "#30cc49",
+    "#3d6751", "#fb4c03", "#640fc1", "#62c03e", "#d3493a", "#88aa0b", "#406df9",
+    "#615af0", "#2a3434", "#4a543f", "#79bca0", "#a8b8d4", "#00efd4", "#7ad236",
+    "#7260d8", "#1deaa7", "#06f43a", "#823c59", "#e3d94c", "#dc1c06", "#f53b2a",
+    "#b46238", "#2dfff6", "#a82b89", "#1a8011", "#436a9f", "#1a806a", "#4cf09d",
+    "#c188a2", "#67eb4b", "#b308d3", "#fc7e41", "#af3101", "#71b1f4", "#a2f8a5",
+    "#e23dd0", "#d3486d", "#00f7f9", "#474893", "#3cec35", "#1c65cb", "#5d1d0c",
+    "#2d7d2a", "#ff3420", "#5cdd87", "#a259a4", "#e4ac44", "#1bede6", "#8798a4",
+    "#d7790f", "#b2c24f", "#de73c2", "#d70a9c", "#88e9b8", "#c2b0e2", "#86e98f",
+    "#ae90e2", "#1a806b", "#436a9e", "#0ec0ff", "#f812b3", "#b17fc9", "#8d6c2f",
+    "#d3277a", "#2ca1ae", "#9685eb", "#8a96c6", "#dba2e6", "#76fc1b", "#608fa4",
+    "#20f6ba", "#07d7f6", "#dce77a", "#77ecca"
+    ];
+    var random_color = colors[Math.floor(Math.random() * colors.length)];
+
+    function hideModal() {
+      modal.classList.add('hide');
+    };
+    
+    function showModal() {
+        const out = `<div id="toolbox" class="modal-content">
+       <!--   <p>Company Name: <span></span></p>
+       
+                      <p>Company Name: <span></span></p>
+                      <p>Company Name: <span></span></p>
+                      <p>Firstname: <span></span></p>
+                      <p>Lastname: <span></span></p>
+                      <p>Email: <span></span></p>
+                      <button class="modal-btn">OK</button>
+                      <p>How would you like to pay</p>
+                      <table style="margin-left:auto;margin-right:auto;">
+      <tr>
+        <th>Credit Card</th>
+        <th>Metamask</th>
+      </tr>
+      <tr>
+        <td><a href="/applypayment"><img src="/img/icon/payment.png" alt="Credit Card" style="height: 100px;"></a></td>
+        <td><img src="/img/icon/metamask1.png" alt="Metamask" style="height: 100px;"></td></td>
+      </tr>
+    </table>
+    <button class="btn">Cancel</button>-->
+      
+    <div style="width: 100%;text-align: right;">
+<a onclick="hideModal()" href="#"><i class="fa fa-close" style="margin-right: 5px !important;"></i></a>
+</div>
+    <form action="/uploadfileb" class="form" id="form" enctype="multipart/form-data" method="POST">
+    <div style="margin-left: auto;margin-right: auto;align-content: center !important;text-align: center;"> 
+        Company Details:
+        </div>
+
+    <div class="form__item">
+        <label for="companyname">Company Name</label>
+        <input type="text" class="input" id="companyname" name="companyname" placeholder="Acme Inc">
+        <span class="rule companyname-rule">
+          <i class="icon far fa-times-circle times"></i>
+          <i class="icon far fa-check-circle check"></i>
+          Cannot be blank
+        </span>
+        <span class="error">
+          <i class="fas fa-exclamation-circle"></i>
+          Company Name cannot be blank
+        </span>
+      </div>
+
+      <div class="form__item">
+        <label for="url">Redirect URL</label>
+        <input type="text" class="input" name="url" placeholder="https://www.ju3tin.github.io">
+        <span class="rule url-rule">
+          <i class="icon far fa-times-circle times"></i>
+          <i class="icon far fa-check-circle check"></i>
+          include full url
+        </span>
+        <span class="error">
+          <i class="fas fa-exclamation-circle"></i>
+          Last Name cannot be blank
+        </span>
+      </div>
+
+      <div class="form__item">
+        <label for="Sector">Sector</label><br />
+      <select  style="width: 100%" class="input"  name="sector">
+      <option value="">Unselected</option>
+      <option value="Accounting">Accounting</option>
+      <option value="Advertising">Advertising</option>
+      <option value="Art">Art</option>
+      <option value="Celebrity">Celebrity</option>
+      <option value="Communications">Communications</option>
+      <option value="Education">Education</option>
+      <option value="Engineering">Engineering</option>
+      <option value="Fashion">Fashion</option>
+      <option value="Film">Film</option>
+      <option value="Gaming">Gaming</option>
+      <option value="HealthandFitness">Health and Fitness</option>
+      <option value="Law">Law</option>
+      <option value="Media">Media</option>
+      <option value="Medical">Medical</option>
+      <option value="Music">Music</option>
+      <option value="NFT">NFT</option>
+      <option value="Recruitment">Recruitment</option>
+      <option value="Technology">Technology</option>
+      <option value="WebDevelopment">Web Development</option>
+      <option value="Other">Other</option>
+      </select>
+       <span class="rule sector-rule">
+          <i class="icon far fa-times-circle times"></i>
+          <i class="icon far fa-check-circle check"></i>
+          Please select one
+        </span>
+        <span class="error">
+          <i class="fas fa-exclamation-circle"></i>
+          Sector cannot be blank
+        </span>
+  </div>
+  <div class="form__item">
+  <label for="logo">Other</label>
+    <input style="padding: 7px;border: 2px solid #dcdcdc;border-radius: 5px;margin-bottom: 5px;" type="text" class="" name="other" placeholder="">
+</div>
+
+  <div class="form__item">
+    <div style="margin-left: auto;margin-right: auto;align-content: center !important;text-align: center;"> 
+    <img id="blah" src="/images/default.png" width="100px" alt="your image" />
+    </div>
+    <br />
+    <label for="logo">Company Logo</label>
+  <input type="file" accept="image/*" id="imgInp" class="input" name="logo" placeholder="(if applicable)"/>
+<span class="rule logo-rule">
+      <i class="icon far fa-times-circle times"></i>
+      <i class="icon far fa-check-circle check"></i>
+      Valid image
+    </span>
+    <span class="error">
+      <i class="fas fa-exclamation-circle"></i>
+      Image cannot be blank
+    </span>
+  </div>
+
+<div class="form__itemleft">
+    <label for="wallet">Wallet Address NFT's Minted on Polygon Network</label>
+    <input style="padding: 7px;border: 2px solid #dcdcdc;border-radius: 5px;margin-bottom: 5px;" type="text" class="" name="wallet" placeholder="0x00 (leave blank if not setup)">
+  </div>
+
+    <div style="margin-left: auto;margin-right: auto;align-content: center !important;text-align: center;"> 
+        Contact Details:
+        </div>
+    <div class="form__item">
+      <label for="firstname">First Name</label>
+      <input type="text" class="input" name="firstname" placeholder="John">
+      <span class="rule firstname-rule">
+        <i class="icon far fa-times-circle times"></i>
+        <i class="icon far fa-check-circle check"></i>
+        Only letters
+      </span>
+      <span class="error">
+        <i class="fas fa-exclamation-circle"></i>
+        First Name cannot be blank
+      </span>
+    </div>
+    <div class="form__item">
+      <label for="lastname">Last Name</label>
+      <input type="text" class="input" name="lastname" placeholder="Smith">
+      <span class="rule lastname-rule">
+        <i class="icon far fa-times-circle times"></i>
+        <i class="icon far fa-check-circle check"></i>
+        Only letters
+      </span>
+      <span class="error">
+        <i class="fas fa-exclamation-circle"></i>
+        Last Name cannot be blank
+      </span>
+    </div>
+    
+    <div class="form__item">
+      <label for="email">Email</label>
+      <input type="text" class="input" name="email" placeholder="johnsmith@email.com">
+      <span class="rule email-rule">
+        <i class="icon far fa-times-circle times"></i>
+        <i class="icon far fa-check-circle check"></i>
+        Valid email
+      </span>
+      <span class="error">
+        <i class="fas fa-exclamation-circle"></i>
+        Email cannot be blank
+      </span>
+    </div>
+    
+    <div class="form__item">
+        <label for="wallet">Contact</label>
+        <input type="text" class="input" name="contact" placeholder="+44-793-3232">
+        <span class="rule contact-rule">
+            <i class="icon far fa-times-circle times"></i>
+            <i class="icon far fa-check-circle check"></i>
+            Only Numbers
+          </span>
+          <span class="error">
+            <i class="fas fa-exclamation-circle"></i>
+            First Name cannot be blank
+          </span>
+      </div>
+
+    <div class="form__itemleft">
+        <label for="description">Description</label><br />
+      <textarea style="width: 100%; class="" name="description" spellcheck="false"></textarea>
+   
+      </div>
+    
+    <input style="width:40%" class="submit" type="submit" value="Send">&nbsp;&nbsp;<input onclick="hideModal()" style="width:40%; text-align:center" class="cancel" value="Cancel">
+  </form>
+
+                    </div>`;
+      
+        modal.innerHTML = out;
+        modal.classList.remove('hide');
+      };
+      
+    
+   
+
+    <%-`let rectData =
+    [`%><% for (var i = 0; i < results.length; i++) { %>
+    <% if(results[i].approved !== false){ %><%-`[`%><%= results[i].width%><%-`,`%><%= results[i].height%><%-`,`%> <%= results[i].Coordinatesy%>,<%= results[i].Coordinatesx%>, colors[Math.floor(Math.random() * colors.length)], "https://<%= results[i].cid%>.ipfs.nftstorage.link/<%= results[i].image%>", "<%= results[i].url%>"],
+    <% } else { %>[<%= results[i].width%>,<%= results[i].height%>, <%= results[i].Coordinatesy%>,<%= results[i].Coordinatesx%>, colors[Math.floor(Math.random() * colors.length)], "/images/pending.gif", "#"],
+  <% } %><% } %><%-'];'%>
+  
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.1.js" crossorigin="anonymous"></script>
+    
+    
+    
+    <style>
+    
+    *{
+    margin: 0;
+    padding: 0;
+    font-family: 'Recursive', sans-serif;
+    font-size: 1.1rem !important;
+    }
+    .bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    }
+    
+    @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+    }
+    }
+    
+    .b-example-divider {
+    height: 3rem;
+    background-color: rgba(0, 0, 0, .1);
+    border: solid rgba(0, 0, 0, .15);
+    border-width: 1px 0;
+    box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+    }
+    
+    .b-example-vr {
+    flex-shrink: 0;
+    width: 1.5rem;
+    height: 100vh;
+    }
+    
+    .bi {
+    vertical-align: -.125em;
+    fill: currentColor;
+    }
+    
+    .nav-scroller {
+    position: relative;
+    z-index: 2;
+    height: 2.75rem;
+    overflow-y: hidden;
+    }
+    
+    .nav-scroller .nav {
+    display: flex;
+    flex-wrap: nowrap;
+    padding-bottom: 1rem;
+    margin-top: -1px;
+    overflow-x: auto;
+    text-align: center;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    }
+    .dude5 {
+    --bs-bg-opacity: 1;
+    background-color: rgba(var(--bs-dark-rgb),var(--bs-bg-opacity))!important;
+    }
+    canvas {
+    border: 0px solid #ccc;
+    }
+    </style>
+   
+    <script type="text/javascript" src="/js/fabric17.js"></script>
+    <script id="insert"></script>
+    
+    <script src="/js/stringify.js" charset="utf-8"></script>
+    <script>
+    
+    
+    
+    
+    function updateMeasures(evt) {
+    var obj = evt.target;
+    if (obj.type != 'group') {
+    return;
+    }
+    var width = obj.getWidth();
+    var height = obj.getWidth();
+    obj._objects[1].text = width.toFixed(2) + 'px';
+    obj._objects[1].scaleX= 1 / obj.scaleX;
+    obj._objects[1].scaleY= 1 / obj.scaleY;
+    obj._objects[2].text = height.toFixed(2) + 'px';
+    obj._objects[2].scaleX= 1 / obj.scaleY;
+    obj._objects[2].scaleY= 1 / obj.scaleX;
+    }
+    
+    </script>
+    </head>
+    <body>
+    
+      
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Recursive&display=swap');
+        
+        html {
+          box-sizing: border-box;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        
+        *, *:before, *:after {
+          box-sizing: inherit;
+        }
+  
+        
+        body {
+          font-family: 'Recursive', sans-serif;
+          font-size: 1.1rem;
+         
+        }
+        
+        .footer7 {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            background-color: red;
+            color: white;
+            text-align: center;
+         }
+        input {
+          width: 100%;
+          font-family: inherit;
+          height: 50px;
+        }
+        
+        .main {
+          display: flex;
+          justify-content: center;
+          padding-top: 10px;
+        }
+        
+        .form {
+            width: 1000px;
+        }
+        
+        .form__item {
+          position: relative;
+          text-align: left !important;
+        }
+        .form__itemleft {
+          position: relative;
+          text-align: left !important;
+        }
+
+        .form__item label {
+  /*background-color: yellow;*/
+  font-size: 35px !important;
+
+
+}
+.column label {
+  font-size: 35px !important;
+}
+.textsize{
+  font-size: 35px !important;
+}
+        
+        .rule {
+          display: flex;
+          align-items: center;
+          font-size: 0.8rem;
+          margin: 0;
+          margin-bottom: 5px;
+          opacity: 0.5;
+        }
+        
+        .icon {
+          margin-right: 5px;
+        }
+        
+        .input {
+          padding: 7px;
+          border: 2px solid #dcdcdc;
+          border-radius: 5px;
+          margin-bottom: 5px;
+        }
+        
+        .input:focus {
+          border: 2px solid #8a307f;
+          outline: none;
+        }
+        
+        .fa-eye,
+        .fa-eye-slash {
+          position: absolute;
+          right: 10px;
+          transform: translateY(50%);
+          font-size: 1rem;
+          cursor: pointer;
+          color: #606060;
+        }
+        
+        .submit,
+        .modal-btn {
+          color: #fff;
+          cursor: pointer;
+          font-size: 1.1rem;
+          border: 0;
+          border-radius: 5px;
+          background-color: #8a307f;
+          padding: 10px;
+          margin-top: 10px;
+        }
+        .cancel {
+          color: #fff;
+          cursor: pointer;
+          font-size: 1.1rem;
+          border: 0;
+          border-radius: 5px;
+          background-color: #3746b7;
+          padding: 10px;
+          margin-top: 10px;
+        }
+        
+        .valid {
+          opacity: 1;
+          color: #39a339;
+        }
+        
+        .check {
+          display: none;
+        }
+        
+        .valid .times {
+          display: none;
+        }
+        
+        .valid .check {
+          display: block;
+        }
+        
+        .shake {
+          animation: shake 0.5s;
+          animation-iteration-count: 1;
+        }
+        
+        .error {
+          font-size: 0.8rem;
+          color: #e31010;
+          display: none;
+          position: absolute;
+          right: 0;
+          bottom: 0;
+        }
+        
+        .input-error {
+          border: 2px solid #e31010;
+        }
+        
+        .show-error {
+          display: inline-block;
+        }
+        .modal {
+         /* position: fixed;*/
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.5);
+        }
+        
+        .hide {
+          display: none;
+        }
+        
+        .modal-content {
+          background-color: #fff;
+          display: inline-block;
+          min-width: 300px;
+          text-align: center;
+          padding: 10px;
+          border-radius: 5px;
+          /*position: absolute;*/
+          top: 20%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+        
+        .modal p {
+          margin: 0;
+          margin-bottom: 10px;
+        }
+        
+        .modal span {
+          text-decoration: underline;
+        }
+        
+        .modal-btn {
+          margin: 20px auto 0;
+          display: block;
+          padding: 5px 10px;
+          min-width: 70px;
+        }
+        
+        @-webkit-keyframes shake {
+          0% {-webkit-transform:translateX(0);transform:translateX(0)}
+          6.5% {-webki-transform:translateX(-6px)rotateY(-9deg); transform:translateX(-6px) rotateY(-9deg)}
+          18.5% {-webkit-transform:translateX(5px) rotateY(7deg);transform:translateX(5px) rotateY(7deg)}
+          31.5% {-webkit-transform:translateX(-3px) rotateY(-5deg);transform:translateX(-3px) rotateY(-5deg)}
+          43.5% {-webkit-transform:translateX(2px) rotateY(3deg);transform:translateX(2px) rotateY(3deg)}
+          50% {-webkit-transform:translateX(0);transform:translateX(0)}
+        }
+        
+        @keyframes shake {
+          0% {-webkit-transform:translateX(0);transform:translateX(0)}
+          6.5% {-webkit-transform:translateX(-6px) rotateY(-9deg);transform:translateX(-6px) rotateY(-9deg)}
+          18.5% {-webkit-transform:translateX(5px) rotateY(7deg);transform:translateX(5px) rotateY(7deg)}
+          31.5% {-webkit-transform:translateX(-3px) rotateY(-5deg);transform:translateX(-3px) rotateY(-5deg)}
+          43.5% {-webkit-transform:translateX(2px) rotateY(3deg);transform:translateX(2px) rotateY(3deg)}
+          50% {-webkit-transform:translateX(0);transform:translateX(0)}
+        }
+.zindexsub{
+  z-index: -1;
+}
+.zindexplus{
+  z-index: 2;
+}        
+.adGrid{
+margin:0 auto;
+position:relative;
+width:1000px;
+height:1000px;
+background:#ddd;
+margin-top: -1000px;
+}
+.adGrid{background-image:linear-gradient(90deg,hsla(0,0%,100%,.97),hsla(0,0%,100%,.97)),linear-gradient(90deg,#000 50%,#fff 0),linear-gradient(180deg,#000 50%,#fff 0);
+    background-blend-mode:normal,difference,normal;background-size:20px 20px}
+    .adGrid .nsfwAd,.adGrid a div,.adGrid img{position:absolute;display:block;overflow:hidden;font-size:11px;color:rgba(0,0,0,.7);white-space:nowrap;-ms-interpolation-mode:nearest-neighbor;image-rendering:-moz-crisp-edges;image-rendering:pixelated}
+    .adGrid .blank{outline:2px solid rgba(0,0,0,.1);outline-offset:-2px}
+    .adGrid .nsfwAd{background:#000}.adGrid.active img{box-shadow:inset 0 0 0 1px hsla(0,0%,100%,.4)}
+    .adGrid .previewAd{background:hsla(0,0%,100%,.8);border:1px solid hsla(0,0%,100%,.9);z-index:5;outline:20px solid rgba(0,0,0,.4)}
+    .adGrid .previewAd.locked{background:#ffcc47}.dropdown{height:1em;display:inline-block;font-size:.9em}
+    
+    #box{
+    	
+   /* background:#2B5F8E; */
+	width: 1000px;
+  /*  height:250px;*/
+	  /*box-shadow: 0 0 5px #aaa;
+    font-size: 25px;
+  color:#fff;
+    text-align:center;*/
+    
+    
+      
+}
+       </style>
+       
+        <script>
+
+$(function() {
+
+var toolbox = $('#toolbox'),
+    height = toolbox.height(),
+    scrollHeight = toolbox.get(0).scrollHeight;
+
+toolbox.bind('mousewheel', function(e, d) {
+  if((this.scrollTop === (scrollHeight - height) && d < 0) || (this.scrollTop === 0 && d > 0)) {
+    e.preventDefault();
+  }
+});
+
+});
+        </script>
+          
+          
+       
+          <%- include ('../partials/header1.ejs') %>
+          <%- include ('../partials/fade1.ejs') %>
+  
+        <script src='/js/jquery2.min.js'></script>
+  <script id="rendered-js" >
+        fabric.Canvas.prototype.customiseControls({
+        tl: {
+            action: 'rotate',
+            cursor: 'cow.png',
+        },
+        tr: {
+            action: 'scale',
+        },
+        bl: {
+            action: 'remove',
+            cursor: 'pointer',
+        },
+        br: {
+            action: 'moveUp',
+            cursor: 'pointer',
+        },
+        mb: {
+            action: 'moveDown',
+            cursor: 'pointer',
+        },
+       
+        // only is hasRotatingPoint is not set to false
+       
+    });
+
+    // basic settings
+    fabric.Object.prototype.customiseCornerIcons({
+        settings: {
+            borderColor: '#0094dd',
+            cornerSize: 25,
+            cornerShape: 'rect',
+            cornerBackgroundColor: 'black',
+        },
+        tl: {
+            icon: 'icons/rotate.svg',
+        },
+        tr: {
+            icon: 'icons/resize.svg',
+        },
+        ml: {
+            icon: '//maxcdn.icons8.com/Share/icon/Logos//google_logo1600.png',
+        },
+       
+        
+    }, function() {
+        canvas.renderAll();
+    });
+    
+  (function () {
+  
+  'use strict';
+  
+  var $searchView = $('.menu-search-container');
+  var $menu = $('.menu-mac, .menu-iPad, .menu-iPhone, .menu-watch, .menu-tv, .menu-support, .menu-search, .menu-store');
+  var $fadeScreen = $('.fade-screen');
+  
+  $('li.menu-search a, .fade-screen, .menu-search-close').on('click', function (e) {
+  
+  $searchView.toggleClass('active');
+  
+  setTimeout(function () {
+  $searchView.children().find('input').focus();
+  }, 1100);
+  
+  $fadeScreen.toggleClass('visible');
+  $menu.removeClass('is-closed');
+  $menu.toggleClass('hidden');
+  
+  e.preventDefault();
+  });
+  
+  $('.fade-screen,.menu-search-close').on('click', function (e) {
+  $menu.toggleClass('is-closed');
+  e.preventDefault();
+  });
+  
+  })();
+
+ 
+  
+  </script>
+  
+         <br /><br /><br />
+    
+    
+    <script type='text/javascript' src='/js/intercet.js'></script>
+    
+    <div style="display:none" id='container3'>
+    </div>
+    <div class="container" style="font-family: 'Recursive', sans-serif !important;">
+    <!-- <button id="show">Show( )</button>
+      <button id="hide">Hide( )</button>
+      <button id="toggle">Toggle( )</button>
+      <button id="show-3000">Show(3000)</button>
+      <button id="hide-3000">Hide(3000)</button>
+      <button id="toggle-3000">Toggle(3000)</button>
+      <button id="show-slow">Show("slow")</button>
+      <button id="hide-slow">Hide("slow")</button> 
+      <button id="toggle-slow">Show Controls</button>-->
+      <a href="#" id="toggle-slow">Show Controls</a>
+      <div id="box">
+    <form id="form1" action="" method="POST" style="width: 1000px !important;">
+    
+    
+    
+    <div class="md:flex md:items-center mb-6">
+    <div class="md:w-1/3">
+    <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="name">Co-Ordinates Y</label>
+    </div>
+    <div class="md:w-2/3">
+    <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" type="text" id="result123" value="0" name="name" placeholder="John Doe">
+    </div>
+    </div>
+    <div class="md:flex md:items-center mb-6">
+      <div class="md:w-1/3">
+          <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="name">Co-Ordinates Y Slider</label>
+          </div>
+  <div id="range">
+      <input type="range" class="image-scale-lever" step="1" max="100" min="0" value="0" id="coy-control" />
+      </div>
+  </div>
+    <!-- test123 -->
+    <div class="md:flex md:items-center mb-6">
+    <div class="md:w-1/3">
+    <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="name">Co-Ordinates X</label>
+    </div>
+    <div class="md:w-2/3">
+    <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" type="text"  id="result123a" value="0" name="name" placeholder="John Doe">
+    </div>
+    </div>
+    <div class="md:flex md:items-center mb-6">
+      <div class="md:w-1/3">
+          <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="name">Co-Ordinates X Slider</label>
+          </div>
+  <div id="range">
+      <input type="range" class="image-scale-lever" step="1" max="100" min="0" value="0" id="cox-control" />
+      </div>
+  </div>
+   
+    <!-- test123b -->
+    <div class="md:flex md:items-center mb-6">
+    <div class="md:w-1/3">
+    </div>
+    <div class="md:w-2/3">
+   <!-- <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" type="text"  id="result123c" value="0" name="name" placeholder="John Doe">
+  -->  </div>
+    </div>
+
+    <div class="row">
+      <div class="column">
+        <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="name">Width of Image</label>
+        <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" type="text"  id="result123b" value="0" name="name" placeholder="John Doe">
+      </div>
+      <div class="column">
+        <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="name">Length of Image</label>
+        <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" type="text"  id="result123c" value="0" name="name" placeholder="John Doe">
+  
+      </div>
+    </div>
+
+    <div class="md:flex md:items-center mb-6">
+        <div class="md:w-1/3">
+            <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="name">Scale Slider</label>
+            </div>
+    <div id="range">
+        <input type="range" class="image-scale-lever" step="1" max="10" min="1" value="10" id="scale-control" />
+        </div>
+    </div>
+    <!-- test123b -->
+    <div class="md:flex md:items-center mb-6">
+    <div class="md:w-1/3">
+    <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="name">Price</label>
+    </div>
+    <div class="md:w-2/3">
+    <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" type="text"  id="result123d" value="0" name="name" placeholder="£0.00">
+    </div>
+    </div>
+    <div class="md:flex md:items-center">
+    <div class="md:w-1/3"></div>
+    <div class="md:w-2/3">
+     <div style="text-align: center;">
+       <a onclick="addpixillion()" style="width:30% !important; text-align:center" class="submit textsize">Add Pixillion</a>
+      &nbsp;&nbsp;
+      <!--  <input onclick="hideModal()" style="width:40%; text-align:center" class="cancel" value="Insert Logo">--> 
+      <input type="file" onchange="upload(event)" style="width:30% !important;" accept="image/*" id="imgInp" class="cancel textsize" name="logo" placeholder="(if applicable)" dcvalue="">   
+      &nbsp;&nbsp;
+      <a onclick="showModal()" style="width:30% !important; text-align:center" class="submit textsize">Send</a>
+   
+    </div>
+      <br />
+     </div>
+    </div>
+    <div id="container4">
+    &nbsp;
+    </div>
+    <div id="container5">
+        &nbsp;
+        </div>
+    </form>
+  </div>
+    <div>
+    <canvas id="c" style="background-image: url("");" width="1000px" height="1000px"></canvas>
+    </div>
+    
+    <div id="adGrid"class="adGrid zindexplus">
+     <!-- <a href="#" data-idx="0"><img src="/images/pending.gif" class="blank" style="object-fit: contain;object-position: center;left:0px;top:0px;width:100px;height:100px;background:#f79361cc"></a>`
+    dude345 -->
+<Script>
+  rectData.forEach((rectangle, index) => {
+    document.write(`<a href="`+rectangle[6]+`" data-idx="0"><img src="`+rectangle[5]+`" class="blank" style="object-fit: contain;object-position: center;left:`+rectangle[3]+`;top:`+rectangle[2]+`;width:`+rectangle[0]+`;height:`+rectangle[1]+`;background:#f79361cc"></a>`
+   );
+     });  
+</Script>
+         
+        
+        </div>
+
+        <div style="display:none"> 
+          <img id="blah" src="/images/default.jpg" width="100px" height="100%" alt="your image">
+          </div>
+    
+    <script type="text/javascript">
+    
+    
+    
+    // Build using FabricJS v3.4
+    
+    //var canvas = new fabric.Canvas('c', { selection: false });
+    
+    const canvas = new fabric.Canvas('c', {
+    //backgroundColor: 'black',
+    width: 1000,
+    height: 1000 },
+    { selection: false });
+    fabric.Image.fromURL('', function(o) {
+    canvas.setBackgroundImage(o, canvas.renderAll.bind(canvas), {
+    top: 0,
+    left: 0
+    });
+    });
+    
+    
+    var snapSize = 10;
+    var gridSize = 10;
+    
+    canvas.on('object:moving',function(e){
+    if (e.target){
+    function roundUpNearest10(num) {
+    return Math.round(num / 10) * 1;
+    };
+    var west = e.target.aCoords.tl.x;
+    var west1 = e.target.aCoords.tl.y;
+    var east = e.target.aCoords.tr.x;
+    var east1 = e.target.aCoords.tr.y;
+    var westa = e.target.aCoords.bl.x;
+    var west1a = e.target.aCoords.bl.y;
+    var easta = e.target.aCoords.br.x;
+    var east1a = e.target.aCoords.br.y;
+    var topdude = e.target.getTop()
+    var topdude = e.target.getTop();
+    var leftdude = e.target.getLeft();
+    var widthdude = e.target.getWidth();
+    var heightdude = e.target.getHeight();
+    var parent = {top: roundUpNearest10(topdude), left:roundUpNearest10(leftdude), width: widthdude, height: heightdude };
+    var children = [{top:0, left:0, width: 100, height: 100 }];
+    var inverses = inverseIntersection(parent, children);
+    
+    var a1a =0;
+    
+    rectData.forEach((rectData, index) => {
+    // code
+    
+    var rect1a = rectData[3]+rectData[1];
+    var rect1b = rectData[3]+rectData[0];
+    var rect1c = rectData[2]+rectData[0];
+    var rect1d = rect1c+rectData[1];
+    var rect1e = 1000 - rectData[2];
+    var rect1e = 1000 - rectData[2];
+    console.log("rectData"+[index]);
+    let pX = rectData[0];
+    let pY = rectData[1];
+    
+    let getArea = pY * pX;
+    console.log('getArea = '+getArea);
+    //console.log(rectData[3], rectData[2], rectData[3]+rectData[0], rectData[1]+rectData[2]);
+    var rec1 = [westa, roundUpNearest10(east1) * 10, roundUpNearest10(east) * 10, west1a]; 
+    console.log(rec1);
+    var rec2 = [rectData[0],rectData[3], rect1c, rect1d];
+    console.log(rec2);
+    //console.log('withoutLeading1 * 10, withoutLeading0 * 10, withoutLeading7 * 10, withoutLeading6 * 10');
+    
+    if (roundUpNearest10(east) * 10 < rectData[3] || rectData[3]+rectData[0] < westa ||
+    west1a < rectData[2] || rectData[1]+rectData[2] < roundUpNearest10(east1) * 10)
+        {var recDataArea = false; 
+            console.log('false' + recDataArea)
+        }
+        else{
+        var recDataArea = true;
+        console.log('true' + recDataArea)
+    } 
+    
+    if(recDataArea == true){
+            let x1a = Math.max(rectData[3], rec1[0])
+            let x2a = Math.min(rectData[3]+rectData[0], rec1[2])
+            let y1a = Math.max(rectData[2], rec1[1])
+            let y2a = Math.min(rectData[1]+rectData[2], rec1[3])
+    
+            let pXa = Math.abs(x2a - x1a)
+            let pYa = Math.abs(y2a - y1a)
+    
+            console.log(pXa * pYa);
+            console.log(a1a);
+            var recDataArea1a = pXa * pYa;
+    };
+    
+    if(recDataArea1a > 1){
+      a1a = a1a + 1;
+      console.log(a1a);
+     }else{
+     }
+    
+    if(a1a > 0){
+        document.getElementById("container5").innerHTML = 
+        'you are not allowed to put your logo here.';
+    }
+    else{
+        document.getElementById("container5").innerHTML = 
+        '&nbsp;';
+    }
+    
+    
+    
+    });
+    
+    
+    
+    document.getElementById("result123").value = (roundUpNearest10(topdude));
+    document.getElementById("result123a").value = (roundUpNearest10(leftdude));
+    document.getElementById("result123b").value = (roundUpNearest10(widthdude));
+    document.getElementById("result123c").value = (roundUpNearest10(heightdude));
+    document.getElementById("result123d").value = ((roundUpNearest10(widthdude)) * (roundUpNearest10(heightdude)));
+    
+    
+    
+    }
+    
+    document.getElementById("container3").innerHTML = 
+    //"Parent: " + JSON.stringify(parent) + "<br />" +
+    //"Children: " + JSON.stringify(children) + "<br />" +
+    //"Inverse Intersections: " + JSON.stringify(inverses) + "<br />" +
+    'top left (x) '+(roundUpNearest10(west1))+
+    '<br />top left (y) '+(roundUpNearest10(west))+
+    '<br />top right (x) '+(roundUpNearest10(east))+
+    '<br />top right (y) '+(roundUpNearest10(east1))+
+    '<br />bottom left (x) '+(roundUpNearest10(westa))+
+    '<br />bottom left (y) '+(roundUpNearest10(west1a))+
+    '<br />bottom right (x) '+(roundUpNearest10(easta))+
+    '<br />bottom right (y) '+(roundUpNearest10(east1a));
+    //if west1 = 0{};
+    if (west1 < 0 || west < 0  || easta > 1000 || east1a > 1000) {
+        // Do Something
+        document.getElementById("container4").innerHTML = 'you are out of bounds';
+    }else{
+        document.getElementById("container4").innerHTML = '&nbsp;';
+    }
+    });
+    
+    canvas.on('object:scaling',function(e){
+    if (e.target){
+    function roundUpNearest10(num) {
+    return Math.round(num / 10) * 1;
+    };
+    
+    // console.log(e.target.getTop());
+    //   console.log(e.target.getLeft());
+    var topdude = e.target.getTop();
+    var topdudea = (roundUpNearest10(topdude));
+    var leftdude = e.target.getLeft();
+    var widthdude = e.target.getWidth();
+    var heightdude = e.target.getHeight();
+    
+    
+    //console.log(leftdude);
+    
+    document.getElementById("result123").value = (roundUpNearest10(topdude));
+    document.getElementById("result123a").value = (roundUpNearest10(leftdude));
+    document.getElementById("result123b").value = (roundUpNearest10(widthdude));
+    document.getElementById("result123c").value = (roundUpNearest10(heightdude));
+    document.getElementById("result123d").value = ((roundUpNearest10(widthdude)) * (roundUpNearest10(heightdude)));
+    }
+    });
+    for (var i = 0; i < (1000 / gridSize); i++) {
+    canvas.add(new fabric.Line([ i * gridSize, 0, i * gridSize, 1000], {  selectable: false }));
+    canvas.add(new fabric.Line([ 0, i * gridSize, 1000, i * gridSize], {  selectable: false }))
+    }
+    rectData.forEach((rectangle, i) => {
+    
+    
+    canvas.add(new fabric.Rect({ 
+    
+    id:   this.id,
+    left: rectangle[3],
+    top: rectangle[2],
+    width: rectangle[0],
+    height: rectangle[1],
+    fill: rectangle[4],
+    opacity: 0,
+    originX: 'left',
+    originY: 'top',
+    hasRotatingPoint: false,
+    selectable: false,
+    hasBorders: false,
+    borderScaleFactor: 0
+    }));
+
+    });
+    
+    function Snap(value)
+    {
+    return Math.round(value / snapSize) * snapSize;
+    }
+    
+    function SnapMoving(options)
+    {
+    options.target.set({
+    left: Snap(options.target.left),
+    top: Snap(options.target.top)
+    });
+    }
+    
+    function SnapScaling(options)
+    {
+    var target = options.target;
+    var pointer = options.pointer;
+    
+    var px = Snap(pointer.x);
+    var py = Snap(pointer.y);
+    var rx = (px - target.left) / target.width;
+    var by = (py - target.top) / target.height;
+    var lx = (target.left - px + (target.width * target.scaleX)) / (target.width);
+    var ty = (target.top - py + (target.height * target.scaleY)) / (target.height);
+    
+    var a = {};
+    
+    
+    // Cannot get snap to work on some corners :-(
+    switch (target.__corner)
+    {
+    case "tl":
+    // Not working
+    //a = { scaleX: lx, scaleY: ty, left: px, top: py };
+    break;
+    case "mt":
+    a = { scaleY: ty, top: py };
+    break;
+    case "tr":
+    // Not working
+    //a = { scaleX: rx, scaleY: ty, top: py  };
+    break;
+    case "ml":
+    a = { scaleX: lx, left: px };
+    break;
+    case "mr":
+    a = { scaleX: rx };
+    break;
+    case "bl":
+    // Not working
+    //a = { scaleX: lx, scaleY: by, left: px };
+    break;
+    case "mb":
+    a = { scaleY: by };
+    break;
+    case "br":
+    a = { scaleX: rx, scaleY: by };
+    break;
+    }
+    
+    options.target.set(a);
+    
+    }
+    
+    
+    
+    canvas.on({
+    "object:moving": SnapMoving,
+    "object:scaling": SnapScaling,
+    
+    }
+    
+    );
+    
+    
+    
+    var slot1 = new fabric.Rect({
+    originX: 'left',
+    originY: 'top',
+    left: 0,
+    top: 0,
+    width: 1000,
+    height: 1000,
+    hasControls: false,
+    hasBorders: false,
+    borderScaleFactor: 0,
+    fill: 'transparent',
+    stroke: 'white',
+    strokeWidth: 0,
+    selectable: false });
+    
+    
+    
+    canvas.renderAll();
+    
+    var rect2a = fabric.Image.fromURL('/images/default.jpg', image => {
+    // image.scale(0.5);
+    image.width = 100;
+    image.height = 100;
+    
+    image.set({
+    left: 0,
+    top: 0,
+    id: 'image1',
+    hasControls: false,
+    hasBorders: false,
+    lockScalingX: true,
+    borderScaleFactor: 0,
+    opacity: 1,
+    lockScalingY: true,
+    lockRotation: true,
+    hoverCursor: 'default',
+    clipTo: function (ctx) {
+    return clipBySlot(ctx, image, slot1);
+    } });
+    
+    
+    scaleImageToSlot(image, slot1);
+    
+    //canvas.add(image);
+    
+    
+    
+    canvas.on('object:moving', function(options) { 
+    options.target.setCoords();
+    //options.target.set({
+    //left: Math.round(options.target.left / grid) * grid,
+    //top: Math.round(options.target.top / grid) * grid,
+    
+    //});
+    //console.log(image.left, image.top);
+    //        var obj = options.target;
+    //   intersectingCheck(obj);
+    
+    });
+    
+    
+    
+    
+    
+    //canvas.add(slot1);
+    canvas.renderAll();
+    });
+    
+    function scaleImageToSlot(image, slot) {
+    
+    // Find smallest ratio of slot:width / image:width and slot:height / image: height
+    let ratio = Math.min(1 * image.width, 1 * image.height);
+    //console.log(`ratio width ${slot.width / image.width}, height ${slot.height / image.height}`);
+    //console.log('=> ratio', ratio);
+    if (ratio <= 1) {
+    let newHeight = image.height * image.scaleY;
+    let newWidth = image.width * image.scaleX;
+    }
+    var shiftLeft = (slot.width - image.width * image.scaleX) / 2;
+    var shiftTop = (slot.height - image.height * image.scaleY) / 2;
+    //console.log(`shift ${shiftLeft}x${shiftTop}`);
+    
+    
+    
+    
+    }
+    
+    function clipBySlot(ctx, image, slot) {
+    var scaleXTo1 = 1 / image.scaleX;
+    var scaleYTo1 = 1 / image.scaleY;
+    
+    // Save context of the canvas so it can be restored after the clipping
+    ctx.save();
+    
+    ctx.translate(0, 0);
+    ctx.rotate(degToRad(image.angle * -1));
+    ctx.scale(scaleXTo1, scaleYTo1);
+    
+    ctx.beginPath();
+    
+    const boundingRect = image.getBoundingRect();
+    // console.log(`[left] ${image.left} - (${boundingRect.width} / 2)`);
+    
+    ctx.rect(
+    slot.left - image.left - Math.floor(boundingRect.width / 2),
+    slot.top - image.top - Math.floor(boundingRect.height / 2),
+    slot.width,
+    slot.height);
+    
+    ctx.stroke();
+    ctx.closePath();
+    
+    // Restore the original context.
+    ctx.restore();
+    }
+    
+    // Since the `angle` property of the Image object is stored 
+    // in degrees, we'll use this to convert it to radians.
+    function degToRad(degrees) {
+    return degrees * (Math.PI / 180);
+    }
+    
+    function intersectingCheck(activeObject) {
+    activeObject.setCoords();
+    if(typeof activeObject.refreshLast != 'boolean') {
+    activeObject.refreshLast = true
+    };
+    
+    //loop canvas objects
+    activeObject.canvas.forEachObject(function (targ) {
+    if (targ === activeObject) return; //bypass self
+    
+    //check intersections with every object in canvas
+    if (activeObject.intersectsWithObject(targ) 
+    || activeObject.isContainedWithinObject(targ) 
+    || targ.isContainedWithinObject(activeObject)) {
+    //objects are intersecting - deny saving last non-intersection position and break loop
+    if(typeof activeObject.lastLeft == 'number') {
+    activeObject.left = activeObject.lastLeft;
+    activeObject.top = activeObject.lastTop;
+    activeObject.refreshLast = false;
+    return;
+    }
+    }
+    else {
+    activeObject.refreshLast = true;
+    }
+    });
+    
+    if(activeObject.refreshLast) {
+    //save last non-intersecting position if possible
+    activeObject.lastLeft = activeObject.left
+    activeObject.lastTop = activeObject.top;
+    }
+    }
+    
+    
+    canvas.on({
+    'object:moving': onChange,
+    'object:scaling': onChange,
+    'object:rotating': onChange,
+    });
+    
+    function onChange(options, slot) {
+    options.target.setCoords();
+    canvas.forEachObject(function(obj) {
+    if (obj === options.target) return;
+    obj.set('opacity' ,options.target.intersectsWithObject(obj) ? 0.5 : 0);
+    });
+    }
+    
+    function addpixillion(){
+      var adgrid1 = document.getElementById("adGrid");
+adgrid1.classList.remove("zindexplus");
+adgrid1.classList.add('zindexsub');
+    }
+
+    function upload(e) {
+   
+   //var fileType = e.target.files[0].type;
+  // var url = URL.createObjectURL(e.target.files[0]);
+/*
+   if (fileType === 'image/png') { //check if png
+      fabric.Image.fromURL(url, function(obj) {
+        var obj = canvas.getActiveObject();
+        obj.set({
+            width: 10,
+            height: 10
+         });
+         canvas.add(obj);
+      });
+   } else if (fileType === 'image/svg+xml') { //check if svg
+      fabric.loadSVGFromURL(url, function(objects, options) {
+         var svg = fabric.util.groupSVGElements(objects, options);
+         svg.scaleToWidth(180);
+         svg.scaleToHeight(180);
+         canvas.add(svg);
+      }); 
+   }
+  */
+  
+}
+
+imgInp.onchange = evt => {
+  const [file] = imgInp.files
+  if (file) {
+    canvas.getObjects().forEach(function(o) {
+          if(o.id == 'dude12a') {
+              canvas.setActiveObject(o);
+              console.log(o.id)
+          }
+          
+      })
+    var obj = canvas.getActiveObject();
+    //need to call the item id 
+    blah.src = URL.createObjectURL(file);
+    var blah1 = URL.createObjectURL(file);
+  
+    obj.setSrc(blah1, function() {
+      obj.set({
+            width: 10,
+            height: 10
+         });
+      canvas.renderAll();
+     
+});
+
+}
+};
+  
+    </script>
+    
+    
+    <script>
+    jQuery( document ).ready(function() {
+    // var canvas = this.__canvas = new fabric.Canvas('c');
+    var img4 = new fabric.Image.fromURL('/images/default_logo.png', function(oImg) {
+    oImg.set({
+    //id: this.dude45rt,
+    id: 'dude12a',
+    left: 0,
+    top: 20,
+    width:10,
+    height:10,
+    scaleX: 10,
+    scaleY: 10,
+    lockScalingX: true,  
+    hasControls: false,      
+    lockScalingY: true,
+    lockRotation: true,
+    });
+    oImg.customiseCornerIcons({
+            settings: {
+                borderColor: 'black',
+                cornerSize: 25,
+                cornerShape: 'rect',
+                cornerBackgroundColor: 'black',
+                cornerPadding: 10,
+            },
+            tl: {
+                icon: 'icons/rotate.svg',
+            },
+            tr: {
+                icon: 'icons/resize.svg',
+            },
+            bl: {
+                icon: 'icons/remove.svg',
+            },
+            br: {
+                icon: 'icons/up.svg',
+            },
+            mb: {
+                icon: 'icons/down.svg',
+            },
+           
+            
+         
+            
+        }, function() {
+            canvas.renderAll();
+        });
+
+    canvas.add(oImg);
+    canvas.setActiveObject(oImg);
+    var scaleControl = $('#form1 #scale-control');
+    scaleControl.on("change",function() {
+    var a1a=0;
+    var newValue = this.value; 
+    
+    document.getElementById("container5").innerHTML = '&nbsp;';
+    //console.log(width1);
+    
+    
+    oImg.scale(parseFloat(newValue)).setCoords();
+    canvas.renderAll();
+    var width1 = oImg.width;
+    var westca = oImg.top;
+    var westcfa = oImg.left;
+    var westa = oImg.aCoords.tl.x;
+    var west1a = oImg.aCoords.tl.y;
+    var easta = oImg.aCoords.tr.x;
+    var east1a = oImg.aCoords.tr.y;
+    var westaa = oImg.aCoords.bl.x;
+    var west1aa = oImg.aCoords.bl.y;
+    var eastaa = oImg.aCoords.br.x;
+    var east1aa = oImg.aCoords.br.y;
+    var matrix = oImg.calcTransformMatrix();
+    var num0 = westca / 10;
+    var num1 = westcfa / 10;
+    var num2 = (westca / 10);
+    var num3 = (westcfa / 10) + matrix[0];
+    var num4 = (westca / 10) + matrix[0];
+    var num5 =  westcfa / 10;
+    var num6 = (westca / 10) + matrix[0];
+    var num7 = (westcfa / 10) + matrix[0];
+    var withoutLeading0 = +num0;
+    var withoutLeading1 = +num1;
+    var withoutLeading2 = +num2;
+    var withoutLeading3 = +num3;
+    var withoutLeading4 = +num4;
+    var withoutLeading5 = +num5;
+    var withoutLeading6 = +num6;
+    var withoutLeading7 = +num7;
+    
+    //----------------------------------
+    
+    var numtimes0 = withoutLeading0 * 10;
+    var numtimes1 = withoutLeading1 * 10;
+    var numtimes2 = withoutLeading2 * 10;
+    var numtimes3 = withoutLeading3 * 10;
+    var numtimes4 = withoutLeading4 * 10;
+    var numtimes5 = withoutLeading5 * 10;
+    var numtimes6 = withoutLeading6 * 10;
+    var numtimes7 = withoutLeading7 * 10;
+    
+    //----------------------------------
+    
+    
+    document.getElementById("container3").innerHTML = 
+    'top left (x) '+withoutLeading0+
+    '<br />top left (y) '+withoutLeading1+
+    '<br />top right (x) '+withoutLeading2+
+    '<br />top right (y) '+withoutLeading3+
+    '<br />bottom left (x) '+withoutLeading4+
+    '<br />bottom left (y) '+withoutLeading5+
+    '<br />bottom right (x) '+withoutLeading6+
+    '<br />bottom right (y) '+withoutLeading7;
+    
+    
+    document.getElementById("result123b").value = (oImg.scaleX);
+    document.getElementById("result123c").value = (oImg.scaleY);
+    
+    if (oImg.top < 0 || oImg.left < 0 || withoutLeading6 > 100 || withoutLeading7 > 100) {
+        // Do Something
+        document.getElementById("container4").innerHTML = 'you are out of bounds';
+    }else{
+        document.getElementById("container4").innerHTML = '&nbsp;';
+    }
+    
+    
+    
+    document.getElementById("container5").innerHTML = '&nbsp;';
+    rectData.forEach((rectData, index) => {
+    // code
+    
+    var rect1a = rectData[2]+rectData[1];
+    var rect1b = rectData[3]+rectData[0];
+    var rect1c = rectData[2]+rectData[0];
+    var rect1d = rect1c+rectData[1];
+    var rect1e = 1000 - rectData[2];
+    var rect1e = 1000 - rectData[2];
+    console.log("rectData"+[index]);
+    let pX = rectData[0];
+    let pY = rectData[1];
+    
+    let getArea = pY * pX;
+    console.log('getArea = '+getArea);
+    console.log(rectData[3], rectData[2], rectData[3]+rectData[0], rectData[1]+rectData[2]);
+    console.log(withoutLeading1 * 10, withoutLeading0 * 10, withoutLeading7 * 10, withoutLeading6 * 10);
+    
+    if (withoutLeading7 * 10 < rectData[3] || rectData[3]+rectData[0] < withoutLeading1 * 10 ||
+        withoutLeading6 * 10 < rectData[2] || rectData[1]+rectData[2] < withoutLeading0 * 10)
+        {var recDataArea = false; 
+            console.log('false' + recDataArea)
+        }
+        else{
+        var recDataArea = true;
+        console.log('true' + recDataArea)
+    } 
+    
+    if(recDataArea == true){
+            let x1a = Math.max(rectData[3], withoutLeading1 * 10)
+            let x2a = Math.min(rectData[3]+rectData[0], withoutLeading7 * 10)
+            let y1a = Math.max(rectData[2], withoutLeading0 * 10)
+            let y2a = Math.min(rectData[1]+rectData[2], withoutLeading6 * 10)
+    
+            let pXa = Math.abs(x2a - x1a)
+            let pYa = Math.abs(y2a - y1a)
+    
+            console.log(pXa * pYa);
+            console.log(a1a);
+            var recDataArea1a = pXa * pYa;
+    };
+    
+    if(recDataArea1a > 1){
+      a1a = a1a + 1;
+      console.log(a1a);
+     }else{
+     }
+    
+    if(a1a > 0){
+        document.getElementById("container5").innerHTML = 
+        'you are not allowed to put your logo here.';
+    }
+    else{
+        document.getElementById("container5").innerHTML = 
+        '&nbsp;';
+    }
+    //------------------------------------------------
+    //if (this.x2 < rect.x1 || rect.x2 < this.x1 || this.y2 < rect.y1 || rect.y2 < this.y1)
+    /*if (withoutLeading6 * 10 < rectData[3] 
+    || rect.x2 < withoutLeading0 * 10 
+    || withoutLeading7 * 10 < rectData[2] 
+    || rect.y2 < withoutLeading1 * 10 
+    || rect.y1 < withoutLeading0 * 10)
+    {console.log('This is not a valid')}
+    else{console.log('This is valid')};
+    */
+    
+    //------------------------------------------------
+    
+    });
+    function updateControls() {
+    }
+    canvas.observe("object:scaling", function (e) {
+    updateControls();
+    
+    
+    });
+    });
+    });
+    });
+    </script>
+    
+<script>
+$( document ).ready(function() {
+function roundUpNearest10(num) {
+return Math.round(num / 10) * 10;
+};
+var childClicked = false;
+$("#adGrid").children().click(function(e) {
+console.log('in element');
+childClicked = true;
+});
+$("#adGrid").click(function(e){
+if(!childClicked) {
+console.log('in background');
+var cox = roundUpNearest10(e.offsetX);
+var coy = roundUpNearest10(e.offsetY);
+e.preventDefault();
+e.stopPropagation();
+console.log(cox+" "+coy);
+//$("#adGrid").css('z-index', -10);
+var obj = canvas.getActiveObject();
+obj.set({
+left: cox,
+top: coy,  
+});        
+obj.setCoords();
+canvas.renderAll();
+var adgrid1 = document.getElementById("adGrid");
+adgrid1.classList.remove("zindexplus");
+adgrid1.classList.add('zindexsub');
+}
+
+childClicked = false;
+});
+});
+
+canvas.selection = false;
+</script>
+    
+    
+    <div class="info" style="width: 1000px;"><p>✅ Loaded 1621 ads (728 are wrapped as NFTs!) as of block 14245476 (24 seconds ago)</p> 
+        <p>
+            Ads displayed above are loaded directly from the Ethereum Blockchain.
+            This Decentralized Application (<a href="https://ethereum.stackexchange.com/questions/383/what-is-a-dapp">DApp</a>) does not have a traditional backend. No MVC framework, no SQL
+            database. It's just a JavaScript application served statically from
+            Github which speaks to the Ethereum blockchain using
+            <a href="https://github.com/ethereum/web3.js/">Web3.js</a>. Pretty cool,
+            right?
+          </p>
+          </div>
+    
+    <!---->
+    </div>
+    <div id="1a" style='display:none'>
+        <div id='inline_content' style='padding:10px; background:#fff;'>
+        <p><strong>This content comes from a hidden element on this page.</strong></p>
+        <p>The inline option preserves bound JavaScript events and changes, and it puts the content back where it came from when it is closed.</p>
+        <p><a id="click" href="#" style='padding:5px; background:#ccc;'>Click me, it will be preserved!</a></p>
+        
+        <p><strong>If you try to open a new Colorbox while it is already open, it will update itself with the new content.</strong></p>
+        <p>Updating Content Example:<br />
+        <a class="ajax" href="../content/ajax.html">Click here to load new content</a></p>
+        </div>
+    </div>
+    <aside class="modal hide" id="modal"></aside>
+    </body>
+    </html>

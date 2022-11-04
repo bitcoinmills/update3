@@ -1,0 +1,7 @@
+<%-`<script>
+    let rectData =
+    [`%><% for (var i = 0; i < results.length; i++) { %>
+    <% if(results[i].approved !== false){ %><%-`[`%><%= results[i].width%><%-`,`%><%= results[i].height%><%-`,`%><%= results[i].Coordinatesy%>,<%= results[i].Coordinatesx%>, colors[Math.floor(Math.random() * colors.length)], "https://<%= results[i].cid%>.ipfs.nftstorage.link/<%= results[i].image%>", "<%= results[i].url%>"],
+    <% } else { %>[<%= results[i].width%>,<%= results[i].height%>, <%= results[i].Coordinatesy%>,<%= results[i].Coordinatesx%>, colors[Math.floor(Math.random() * colors.length)], "/images/pending.gif", "#"],
+    <% } %><% } %><%-`];
+    </script>`%>

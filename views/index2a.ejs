@@ -1,0 +1,174 @@
+<script>
+  $(document).ready(function() {
+  console.log(parent.result123.value);
+  console.log(parent.result123a.value);
+  console.log(parent.result123b.value);
+  console.log(parent.result123c.value);
+});
+
+</script>
+
+<form action="/uploadfileb" style="font-size: 35px;" class="form" id="form" enctype="multipart/form-data" method="POST">
+    <div style="margin-left: auto;margin-right: auto;align-content: center !important;text-align: center;"> 
+        Company Details:
+        </div>
+    <div class="form__item">
+        <label for="companyname">Company Name</label>
+        <input type="text" class="input" id="companyname" name="companyname" placeholder="Acme Inc">
+        <span class="rule companyname-rule">
+          <i class="icon far fa-times-circle times"></i>
+          <i class="icon far fa-check-circle check"></i>
+          Cannot be blank
+        </span>
+        <span class="error">
+          <i class="fas fa-exclamation-circle"></i>
+          Company Name cannot be blank
+        </span>
+      </div>
+
+      <div class="form__item">
+        <label for="url">Redirect URL</label>
+        <input type="text" class="input" name="url" placeholder="https://www.ju3tin.github.io">
+        <span class="rule url-rule">
+          <i class="icon far fa-times-circle times"></i>
+          <i class="icon far fa-check-circle check"></i>
+          include full url
+        </span>
+        <span class="error">
+          <i class="fas fa-exclamation-circle"></i>
+          Last Name cannot be blank
+        </span>
+      </div>
+
+      <div class="form__item">
+        <label for="Sector">Sector</label><br />
+      <select  style="width: 100%" class="input"  name="sector">
+      <option value="">Unselected</option>
+      <option value="Accounting">Accounting</option>
+      <option value="Advertising">Advertising</option>
+      <option value="Art">Art</option>
+      <option value="Celebrity">Celebrity</option>
+      <option value="Communications">Communications</option>
+      <option value="Education">Education</option>
+      <option value="Engineering">Engineering</option>
+      <option value="Fashion">Fashion</option>
+      <option value="Film">Film</option>
+      <option value="Gaming">Gaming</option>
+      <option value="HealthandFitness">Health and Fitness</option>
+      <option value="Law">Law</option>
+      <option value="Media">Media</option>
+      <option value="Medical">Medical</option>
+      <option value="Music">Music</option>
+      <option value="NFT">NFT</option>
+      <option value="Recruitment">Recruitment</option>
+      <option value="Technology">Technology</option>
+      <option value="WebDevelopment">Web Development</option>
+      <option value="Other">Other</option>
+      </select>
+       <span class="rule sector-rule">
+          <i class="icon far fa-times-circle times"></i>
+          <i class="icon far fa-check-circle check"></i>
+          Please select one
+        </span>
+        <span class="error">
+          <i class="fas fa-exclamation-circle"></i>
+          Sector cannot be blank
+        </span>
+  </div>
+  <div class="form__item">
+  <label for="logo">Other</label>
+    <input style="padding: 7px;border: 2px solid #dcdcdc;border-radius: 5px;margin-bottom: 5px;" type="text" class="" name="other" placeholder="">
+</div>
+
+ 
+<div class="">
+    <label for="wallet">Wallet Address NFT's Minted on Polygon Network</label>
+    <input style="padding: 7px;border: 2px solid #dcdcdc;border-radius: 5px;margin-bottom: 5px;" type="text" class="" name="wallet" placeholder="0x00 (leave blank if not setup)">
+  </div>
+
+    <div style="margin-left: auto;margin-right: auto;align-content: center !important;text-align: center;"> 
+        Contact Details:
+        </div>
+    <div class="form__item">
+      <label for="firstname">First Name</label>
+      <input type="text" class="input" name="firstname" placeholder="John">
+      <span class="rule firstname-rule">
+        <i class="icon far fa-times-circle times"></i>
+        <i class="icon far fa-check-circle check"></i>
+        Only letters
+      </span>
+      <span class="error">
+        <i class="fas fa-exclamation-circle"></i>
+        First Name cannot be blank
+      </span>
+    </div>
+    <div class="form__item">
+      <label for="lastname">Last Name</label>
+      <input type="text" class="input" name="lastname" placeholder="Smith">
+      <span class="rule lastname-rule">
+        <i class="icon far fa-times-circle times"></i>
+        <i class="icon far fa-check-circle check"></i>
+        Only letters
+      </span>
+      <span class="error">
+        <i class="fas fa-exclamation-circle"></i>
+        Last Name cannot be blank
+      </span>
+    </div>
+    
+    <div class="form__item">
+      <label for="email">Email</label>
+      <input type="text" class="input" name="email" placeholder="johnsmith@email.com">
+      <span class="rule email-rule">
+        <i class="icon far fa-times-circle times"></i>
+        <i class="icon far fa-check-circle check"></i>
+        Valid email
+      </span>
+      <span class="error">
+        <i class="fas fa-exclamation-circle"></i>
+        Email cannot be blank
+      </span>
+    </div>
+    
+    <div class="form__item">
+        <label for="wallet">Contact</label>
+        <input type="text" class="input" name="contact" placeholder="+44-793-3232">
+        <span class="rule contact-rule">
+            <i class="icon far fa-times-circle times"></i>
+            <i class="icon far fa-check-circle check"></i>
+            Only Numbers
+          </span>
+          <span class="error">
+            <i class="fas fa-exclamation-circle"></i>
+            First Name cannot be blank
+          </span>
+      </div>
+
+    <div class="">
+        <label for="description">Description</label><br />
+      <textarea style="width: 100%;" name="description" spellcheck="false"></textarea>
+   
+      </div>
+      <div class="form__item">
+      <!--  <label for="tandc">Terms and Conditions</label><br />
+        
+      <span> I agree to these <a href="tac">Terms and Conditions.</a><input type="checkbox" id="tac" name="tac"> </span>--> 
+      </div>
+      <div class="tacbox" style="display:block; padding: 1em; margin: 2em;/* border: 3px solid #ddd; background-color: #eee; max-width: 1000px; */">
+        <input style="height: 2em; width: 2em; vertical-align: middle;" id="checkbox" type="checkbox" />
+        <label for="checkbox"> I agree to these <a href="#">Terms and Conditions</a>.</label>
+      </div>
+    <input class="submit" type="submit" value="Send">
+  </form>
+
+
+
+  <div style="display: none;">$('form').serializeArray():</div>
+  <div style="display: none;" id=serializearray>asfdg</div>
+  
+  <div  style="display: none;">$('form').serialize():</div>
+  <div  style="display: none;" id=serialize>asfdg</div>
+  
+      </div>
+
+<br /><br />

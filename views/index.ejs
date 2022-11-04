@@ -1,0 +1,183 @@
+<form action="/uploadfileb" class="form" id="form" enctype="multipart/form-data" method="POST">
+    <div style="margin-left: auto;margin-right: auto;align-content: center !important;text-align: center;"> 
+        Company Details:
+        </div>
+
+    <div class="form__item">
+        <label for="companyname">Company Name</label>
+        <input type="text" class="input" id="companyname" name="companyname" placeholder="Acme Inc">
+        <span class="rule companyname-rule">
+          <i class="icon far fa-times-circle times"></i>
+          <i class="icon far fa-check-circle check"></i>
+          Cannot be blank
+        </span>
+        <span class="error">
+          <i class="fas fa-exclamation-circle"></i>
+          Company Name cannot be blank
+        </span>
+      </div>
+
+      <div class="form__item">
+        <label for="url">Redirect URL</label>
+        <input type="text" class="input" name="url" placeholder="https://www.ju3tin.github.io">
+        <span class="rule url-rule">
+          <i class="icon far fa-times-circle times"></i>
+          <i class="icon far fa-check-circle check"></i>
+          include full url
+        </span>
+        <span class="error">
+          <i class="fas fa-exclamation-circle"></i>
+          Last Name cannot be blank
+        </span>
+      </div>
+
+      <div class="form__item">
+        <label for="Sector">Sector</label><br />
+      <select  style="width: 100%" class="input"  name="sector">
+      <option value="">Unselected</option>
+      <option value="Accounting">Accounting</option>
+      <option value="Advertising">Advertising</option>
+      <option value="Art">Art</option>
+      <option value="Celebrity">Celebrity</option>
+      <option value="Communications">Communications</option>
+      <option value="Education">Education</option>
+      <option value="Engineering">Engineering</option>
+      <option value="Fashion">Fashion</option>
+      <option value="Film">Film</option>
+      <option value="Gaming">Gaming</option>
+      <option value="HealthandFitness">Health and Fitness</option>
+      <option value="Law">Law</option>
+      <option value="Media">Media</option>
+      <option value="Medical">Medical</option>
+      <option value="Music">Music</option>
+      <option value="NFT">NFT</option>
+      <option value="Recruitment">Recruitment</option>
+      <option value="Technology">Technology</option>
+      <option value="WebDevelopment">Web Development</option>
+      <option value="Other">Other</option>
+      </select>
+       <span class="rule sector-rule">
+          <i class="icon far fa-times-circle times"></i>
+          <i class="icon far fa-check-circle check"></i>
+          Please select one
+        </span>
+        <span class="error">
+          <i class="fas fa-exclamation-circle"></i>
+          Sector cannot be blank
+        </span>
+  </div>
+  <div class="form__item">
+  <label for="logo">Other</label>
+    <input style="padding: 7px;border: 2px solid #dcdcdc;border-radius: 5px;margin-bottom: 5px;" type="text" class="" name="other" placeholder="">
+</div>
+
+  <div class="form__item">
+    <div style="margin-left: auto;margin-right: auto;align-content: center !important;text-align: center;"> 
+    <img id="blah" src="/images/default.png" width="100px" height="100%" alt="your image" />
+    </div>
+    <br />
+    <label for="logo">Company Logo</label>
+  <input type="file" accept="image/*" id="imgInp" class="input" name="logo" placeholder="(if applicable)"/>
+<span class="rule logo-rule">
+      <i class="icon far fa-times-circle times"></i>
+      <i class="icon far fa-check-circle check"></i>
+      Valid image
+    </span>
+    <span class="error">
+      <i class="fas fa-exclamation-circle"></i>
+      Image cannot be blank
+    </span>
+  </div>
+
+<div class="">
+    <label for="wallet">Wallet Address NFT's Minted on Polygon Network</label>
+    <input style="padding: 7px;border: 2px solid #dcdcdc;border-radius: 5px;margin-bottom: 5px;" type="text" class="" name="wallet" placeholder="0x00 (leave blank if not setup)">
+  </div>
+
+    <div style="margin-left: auto;margin-right: auto;align-content: center !important;text-align: center;"> 
+        Contact Details:
+        </div>
+    <div class="form__item">
+      <label for="firstname">First Name</label>
+      <input type="text" class="input" name="firstname" placeholder="John">
+      <span class="rule firstname-rule">
+        <i class="icon far fa-times-circle times"></i>
+        <i class="icon far fa-check-circle check"></i>
+        Only letters
+      </span>
+      <span class="error">
+        <i class="fas fa-exclamation-circle"></i>
+        First Name cannot be blank
+      </span>
+    </div>
+    <div class="form__item">
+      <label for="lastname">Last Name</label>
+      <input type="text" class="input" name="lastname" placeholder="Smith">
+      <span class="rule lastname-rule">
+        <i class="icon far fa-times-circle times"></i>
+        <i class="icon far fa-check-circle check"></i>
+        Only letters
+      </span>
+      <span class="error">
+        <i class="fas fa-exclamation-circle"></i>
+        Last Name cannot be blank
+      </span>
+    </div>
+    
+    <div class="form__item">
+      <label for="email">Email</label>
+      <input type="text" class="input" name="email" placeholder="johnsmith@email.com">
+      <span class="rule email-rule">
+        <i class="icon far fa-times-circle times"></i>
+        <i class="icon far fa-check-circle check"></i>
+        Valid email
+      </span>
+      <span class="error">
+        <i class="fas fa-exclamation-circle"></i>
+        Email cannot be blank
+      </span>
+    </div>
+    
+    <div class="form__item">
+        <label for="wallet">Contact</label>
+        <input type="text" class="input" name="contact" placeholder="+44-793-3232">
+        <span class="rule contact-rule">
+            <i class="icon far fa-times-circle times"></i>
+            <i class="icon far fa-check-circle check"></i>
+            Only Numbers
+          </span>
+          <span class="error">
+            <i class="fas fa-exclamation-circle"></i>
+            First Name cannot be blank
+          </span>
+      </div>
+
+    <div class="">
+        <label for="description">Description</label><br />
+      <textarea style="width: 100%; height: 40%" class="" name="description" spellcheck="false"></textarea>
+   
+      </div>
+    
+    <input class="submit" type="submit" value="Send">
+  </form>
+
+
+
+  <div style="display: none;">$('form').serializeArray():</div>
+  <div style="display: none;" id=serializearray>asfdg</div>
+  
+  <div  style="display: none;">$('form').serialize():</div>
+  <div  style="display: none;" id=serialize>asfdg</div>
+  
+
+  <div class="info"><p>✅ Loaded 1621 ads (728 are wrapped as NFTs!) as of block 14245476 (24 seconds ago)</p> 
+    <p>
+        Ads displayed above are loaded directly from the Ethereum Blockchain.
+        This Decentralized Application (<a href="https://ethereum.stackexchange.com/questions/383/what-is-a-dapp">DApp</a>) does not have a traditional backend. No MVC framework, no SQL
+        database. It's just a JavaScript application served statically from
+        Github which speaks to the Ethereum blockchain using
+        <a href="https://github.com/ethereum/web3.js/">Web3.js</a>. Pretty cool,
+        right?
+      </p>
+      </div>
+
