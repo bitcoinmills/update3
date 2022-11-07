@@ -333,8 +333,27 @@ var form = $('#form')[0];
 
     var element = document.getElementById("form");
   element.classList.add("displaynone");
-  var element1 = document.getElementById("howtopay");
-  element1.classList.remove("displaynone");
+ // var element1 = document.getElementById("howtopay");
+ // element1.classList.remove("displaynone");
+  var clientid = data.clientid;
+  console.log(clientid);
+  document.write(`
+  <div class="displaynone" id="howtopay">
+  <h3 style="text-align: center;">How would you like to pay</h3>
+  <table   style="width: 100%;">
+    <tr style="width: 100%;">
+      <th  style="width: 50%;">Credit Card Payments</th>
+      <th  style="width: 50%;">Cryptocurrency Payments</th>
+     
+    </tr>
+    <tr style="width: 100%;">
+      
+      <td style="width: 50%;text-align: center;"><a target="_PARENT" href="payment?clientid=`+clientid+`"><img style="height: 256px;" src="/images/creditc1.png" /></a></td>
+      <td style="width: 50%;text-align: center;"><img src="/images/icon-256x256.png"/></td>
+    </tr>
+  </table>
+  </div>
+  `)
 
     }
     });
