@@ -340,6 +340,10 @@ app.get("/register", (req, res) => {
 res.render('index', {layout: './layouts/register',  title: 'tst'});
 });
 
+app.get("/testcard", (req, res) => {
+    res.render('index', {layout: './layouts/testcard',  title: 'tst'});
+    });
+
 app.get("/tables", (req, res) => {
 res.render('index', {layout: './layouts/tables',  title: 'tst'});
 });
