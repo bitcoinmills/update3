@@ -1,9 +1,22 @@
+<script>
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+const cid1 = urlParams.get('cid');
+const logo1 = urlParams.get('logo');
+const a1a = urlParams.get('result123');
+const a1aa = urlParams.get('result123a');
+const a1ab = urlParams.get('result123b');
+const a1ac = urlParams.get('result123c');
+</script>
+
 <script id="rendered-js" >
+  
     const form = document.querySelector('#form'),
     modal = document.querySelector('#modal'),
     inputs = form.querySelectorAll('.input'),
     rules = form.querySelectorAll('.rule'),
     errors = form.querySelectorAll('.error');
+    
     
     const data = {
     firstname: '',
@@ -183,9 +196,9 @@
       <button class="modal-btn" id="upload23" value="Upload">OK</button><button class="btn">Cancel</button>
     
     </div>`;
-    
-    modal.innerHTML = out;
-    modal.classList.remove('hide');
+    dude2311();
+   // modal.innerHTML = out;
+   // modal.classList.remove('hide');
     }
     
     inputs.forEach(input => input.addEventListener('input', isInputValid));
@@ -245,15 +258,23 @@
     })
     
     //$(document).on("change", "#avatar", function() {   // If you want to upload without a submit button 
-    $(document).on("click", "#upload23", function() {
+   // $(document).on("click", "#upload23", function() {
+    function dude2311(){
     var dataArray = $("form").serializeArray(),
     dataObj = {};
     $(dataArray).each(function(i, field){dataObj[field.name] = field.value;});
-    // var data1 = JSON.stringify( $('form').serializeArray() );
+    var data1 = JSON.stringify( $('form').serializeArray() );
     //alert(dataObj['companyname']);
+
     var form_data = new FormData(); // Creating object of FormData class
     //logoinfo
     //form_data.append("logo", file_data) // Appending parameter named file with properties of file_field to form_data
+    form_data.append('cid', cid1);
+    form_data.append('logo', logo1);
+    form_data.append('result123', a1a);
+    form_data.append('result123a', a1aa);
+    form_data.append('result123b', a1ab);
+    form_data.append('result123c', a1ac); // Appending parameter named file with properties of file_field to form);
     form_data.append("companyname", (dataObj['companyname'])) // Adding extra parameters to form_data
     form_data.append("url", (dataObj['url'])) // Adding extra parameters to form_data
     form_data.append("sector", (dataObj['sector'])) // Adding extra parameters to form_data
@@ -264,9 +285,12 @@
     form_data.append("email", (dataObj['email'])) // Adding extra parameters to form_data
     form_data.append("contact", (dataObj['contact'])) // Adding extra parameters to form_data
     form_data.append("description", (dataObj['description'])) // Adding extra parameters to form_data
-    //  console.log(data1);
+   /* for (const value of form_data.values()) {
+  console.log(value);
+}
+    console.log(data1); */
     $.ajax({
-    url: "/uploadfileb", // Upload Script
+    url: "/uploadfilef1", // Upload Script
     dataType: 'json',
     cache: false,
     contentType: false,
@@ -276,10 +300,16 @@
     success: function(data) {
     // Do something after Ajax completes 
     // window.open("/applygrid");
-    console.log(data);
-    window.location.replace("/applygrid?id="+ data.cid);
+     console.log(data);
+    //window.location.replace("/applygrid?id="+ data.cid);
+
+    var element = document.getElementById("form");
+  element.classList.add("displaynone");
+  var element1 = document.getElementById("howtopay");
+  element1.classList.remove("displaynone");
+
     }
     });
-    });
+    };
     
     </script>

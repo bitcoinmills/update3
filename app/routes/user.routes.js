@@ -358,6 +358,50 @@ res.render('index', {layout: './layouts/utilities-animation',  title: 'tst'});
 
 app.get("/utilities-border", (req, res) => {
 res.render('index', {layout: './layouts/utilities-border',  title: 'tst'});
-});  
+});
+
+app.post('/uploadfilef1', async(req, res, next) => {
+    //console.log(req.body.file);
+    
+   
+    
+
+    //res.send(file);
+    var FormData = require('form-data');
+    var data = new FormData();
+    
+    
+    
+ 
+    
+    
+    let MongoClient = require('mongodb').MongoClient;
+    let connectionUrl = "mongodb+srv://westham321:westham321@cluster0.x5l6q.mongodb.net/pixillion?retryWrites=true&w=majority";
+    var isodate = new Date().toISOString();
+    let obj = {"image" : req.body.logo,"companyname": req.body.companyname ,
+    "description": req.body.description, "contact": req.body.contact ,
+    "email": req.body.email, "lastname": req.body.lastname, "firstname" : req.body.firstname,
+    "wallet": req.body.wallet, "other": req.body.other, "sector": req.body.sector,
+    "Coordinatesx" : req.body.result123, "Coordinatesy" : req.body.result123a, "cid": req.body.cid, "approved": false,
+    "published": false, "paid": false, "createdAt": new Date(isodate), "logo": req.body.logo,
+    "updatedAt": new Date(isodate),"width" : req.body.result123b, "height" : req.body.result123c, "url" : req.body.url};
+    
+    
+    
+    MongoClient.connect(connectionUrl, function(err, client) {
+    if (err) throw err;
+    var db = client.db('pixillion')
+    db.collection("YourCollection").insertOne(obj, function(err, res) {
+    if (err) throw err;
+    client.close();
+    });
+    });
+    res.json({message: "Successfully Registered", cid: "not done yet", status: 200});
+    
+    })
+   
+  
+
+
 };
     
