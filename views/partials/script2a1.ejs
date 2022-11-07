@@ -197,8 +197,8 @@ const a1ac = urlParams.get('result123c');
     
     </div>`;
     dude2311();
-   // modal.innerHTML = out;
-   // modal.classList.remove('hide');
+   //modal.innerHTML = out;
+   //modal.classList.remove('hide');
     }
     
     inputs.forEach(input => input.addEventListener('input', isInputValid));
@@ -258,8 +258,8 @@ const a1ac = urlParams.get('result123c');
     })
     
     //$(document).on("change", "#avatar", function() {   // If you want to upload without a submit button 
-   // $(document).on("click", "#upload23", function() {
-    function dude2311(){
+  // $(document).on("click", "#upload23", function() {
+   function dude2311(){
     var dataArray = $("form").serializeArray(),
     dataObj = {};
     $(dataArray).each(function(i, field){dataObj[field.name] = field.value;});
@@ -267,14 +267,7 @@ const a1ac = urlParams.get('result123c');
     //alert(dataObj['companyname']);
 
     var form_data = new FormData(); // Creating object of FormData class
-    //logoinfo
-    //form_data.append("logo", file_data) // Appending parameter named file with properties of file_field to form_data
-    form_data.append('cid', cid1);
-    form_data.append('logo', logo1);
-    form_data.append('result123', a1a);
-    form_data.append('result123a', a1aa);
-    form_data.append('result123b', a1ab);
-    form_data.append('result123c', a1ac); // Appending parameter named file with properties of file_field to form);
+   
     form_data.append("companyname", (dataObj['companyname'])) // Adding extra parameters to form_data
     form_data.append("url", (dataObj['url'])) // Adding extra parameters to form_data
     form_data.append("sector", (dataObj['sector'])) // Adding extra parameters to form_data
@@ -284,19 +277,54 @@ const a1ac = urlParams.get('result123c');
     form_data.append("lastname", (dataObj['lastname'])) // Adding extra parameters to form_data
     form_data.append("email", (dataObj['email'])) // Adding extra parameters to form_data
     form_data.append("contact", (dataObj['contact'])) // Adding extra parameters to form_data
-    form_data.append("description", (dataObj['description'])) // Adding extra parameters to form_data
+    form_data.append("description", (dataObj['description']))
+    form_data.append('cid', cid1);
+    form_data.append('logo', logo1);
+    form_data.append('result123', a1a);
+    form_data.append('result123a', a1aa);
+    form_data.append('result123b', a1ab);
+    form_data.append('result123c', a1ac); // Adding extra parameters to form_data
    /* for (const value of form_data.values()) {
   console.log(value);
-}
-    console.log(data1); */
+}*/
+
+
+var form = $('#form')[0];
+         
+         // FormData object 
+         var data = new FormData(form);
+  
+         // If you want to add an extra field for the FormData
+         data.append("cid", "1234 ");
+    console.log(data); 
     $.ajax({
-    url: "/uploadfilef1", // Upload Script
-    dataType: 'json',
-    cache: false,
-    contentType: false,
-    processData: false,
-    data: form_data, // Setting the data attribute of ajax with file_data
-    type: 'post',
+   
+      
+                            url: "/uploadfilef1",
+                            data: JSON.stringify({
+                              "cid": cid1,
+                             "logo": logo1, 
+                             "result123": a1a,
+                             "result123a": a1aa,
+                             "result123b": a1ab,
+                             "result123c": a1ac,
+                             "companyname": $('#companyname').val(),
+                             "url": $('#url').val(),
+                             "sector": $('#sector').val(),
+                             "other": $('#other').val(),
+                             "wallet": $('#wallet').val(),
+                             "firstname": $('#firstname').val(),
+                             "lastname": $('#lastname').val(),
+                             "email": $('#email').val(),
+                             "contact": $('#contact').val(),
+                             "description": $('#description').val(),
+                            }),
+                            processData: false,
+                            type: 'POST',
+                            contentType: 'application/json',
+                          
+                            
+
     success: function(data) {
     // Do something after Ajax completes 
     // window.open("/applygrid");
