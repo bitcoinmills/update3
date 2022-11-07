@@ -1,6 +1,10 @@
 <html>
 <head>
 <meta charset="utf-8">
+<script src="https://js.stripe.com/v3/"></script>
+
+<script src="/js/utils.js" defer></script>
+<script src="/js/card.js" defer></script>
 <script src="/js/jquery-1.8.3.js"></script>
 <script>
 $(document).ready(function() {
@@ -751,6 +755,28 @@ e.preventDefault();
 </div>
 
 </form>
+
+
+<form id="payment-form">
+  <label for="name">
+    Name
+  </label>
+  <input id="name" placeholder="Jenny Rosen" value="Jenny Rosen" required />
+
+  <label for="card-element">
+    Card
+  </label>
+  <div id="card-element">
+    <!-- Elements will create input elements here -->
+  </div>
+
+  <!-- We'll put the error messages in this element -->
+  <div id="card-errors" role="alert"></div>
+
+  <button id="submit">Pay</button>
+</form>
+
+<div id="messages" role="alert" style="display: none;"></div>
 
 <script src='/js/jquery1.min.js'></script>
 <script src='/js/bootstrap1.min.js'></script>

@@ -1,0 +1,378 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>[Stripe] Elements w/ separate fields &amp; custom placeholders</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <script
+    type="text/javascript"
+    src="/js/lib/dummy.js"
+    
+  ></script>
+
+    <link rel="stylesheet" type="text/css" href="/css/result-light.css">
+
+
+  <style id="compiled-css" type="text/css">
+    * {
+  font-family: "Helvetica Neue", Helvetica;
+  font-size: 15px;
+  font-variant: normal;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  background: #E6EBF1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+}
+
+form {
+  width: 480px;
+  margin: 20px 0;
+}
+
+.group {
+  background: white;
+  box-shadow: 0 7px 14px 0 rgba(49, 49, 93, 0.10), 0 3px 6px 0 rgba(0, 0, 0, 0.08);
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+label {
+  position: relative;
+  color: #8898AA;
+  font-weight: 300;
+  height: 40px;
+  line-height: 40px;
+  margin-left: 20px;
+  display: flex;
+  flex-direction: row;
+}
+
+.group label:not(:last-child) {
+  border-bottom: 1px solid #F0F5FA;
+}
+
+label > span {
+  width: 120px;
+  text-align: right;
+  margin-right: 30px;
+}
+
+.field {
+  background: transparent;
+  font-weight: 300;
+  border: 0;
+  color: #31325F;
+  outline: none;
+  flex: 1;
+  padding-right: 10px;
+  padding-left: 10px;
+  cursor: text;
+}
+
+.field::-webkit-input-placeholder {
+  color: #CFD7E0;
+}
+
+.field::-moz-placeholder {
+  color: #CFD7E0;
+}
+
+button {
+  float: left;
+  display: block;
+  background: #666EE8;
+  color: white;
+  box-shadow: 0 7px 14px 0 rgba(49, 49, 93, 0.10), 0 3px 6px 0 rgba(0, 0, 0, 0.08);
+  border-radius: 4px;
+  border: 0;
+  margin-top: 20px;
+  font-size: 15px;
+  font-weight: 400;
+  width: 100%;
+  height: 40px;
+  line-height: 38px;
+  outline: none;
+}
+
+button:focus {
+  background: #555ABF;
+}
+
+button:active {
+  background: #43458B;
+}
+
+.outcome {
+  float: left;
+  width: 100%;
+  padding-top: 8px;
+  min-height: 24px;
+  text-align: center;
+}
+
+.success,
+.error {
+  display: none;
+  font-size: 13px;
+}
+
+.success.visible,
+.error.visible {
+  display: inline;
+}
+
+.error {
+  color: #E4584C;
+}
+
+.success {
+  color: #666EE8;
+}
+
+.success .token {
+  font-weight: 500;
+  font-size: 13px;
+}
+
+
+    /* EOS */
+  </style>
+
+  <script id="insert"></script>
+
+    <script src="/js/stringify.js?67dd239ea46c4fe66f782c02980889cc54362b0d" charset="utf-8"></script>
+    <script>
+      const customConsole = (w) => {
+        const pushToConsole = (payload, type) => {
+          w.parent.postMessage({
+            console: {
+              payload: stringify(payload),
+              type:    type
+            }
+          }, "*")
+        }
+
+        w.onerror = (message, url, line, column) => {
+          // the line needs to correspond with the editor panel
+          // unfortunately this number needs to be altered every time this view is changed
+          line = line - 70
+          if (line < 0){
+            pushToConsole(message, "error")
+          } else {
+            pushToConsole(`[${line}:${column}] ${message}`, "error")
+          }
+        }
+
+        let console = (function(systemConsole){
+          return {
+            log: function(){
+              let args = Array.from(arguments)
+              pushToConsole(args, "log")
+              systemConsole.log.apply(this, args)
+            },
+            info: function(){
+              let args = Array.from(arguments)
+              pushToConsole(args, "info")
+              systemConsole.info.apply(this, args)
+            },
+            warn: function(){
+              let args = Array.from(arguments)
+              pushToConsole(args, "warn")
+              systemConsole.warn.apply(this, args)
+            },
+            error: function(){
+              let args = Array.from(arguments)
+              pushToConsole(args, "error")
+              systemConsole.error.apply(this, args)
+            },
+            system: function(arg){
+              pushToConsole(arg, "system")
+            },
+            clear: function(){
+              systemConsole.clear.apply(this, {})
+            },
+            time: function(){
+              let args = Array.from(arguments)
+              systemConsole.time.apply(this, args)
+            },
+            assert: function(assertion, label){
+              if (!assertion){
+                pushToConsole(label, "log")
+              }
+
+              let args = Array.from(arguments)
+              systemConsole.assert.apply(this, args)
+            }
+          }
+        }(window.console))
+
+        window.console = { ...window.console, ...console }
+
+        console.system("Running fiddle")
+      }
+
+      if (window.parent){
+        customConsole(window)
+      }
+    </script>
+</head>
+<body>
+    <script src="https://js.stripe.com/v3/"></script>
+
+<body>
+  <form action="//httpbin.org/post" method="POST">
+    <input type="hidden" name="token" />
+    <div class="group">
+      <label>
+        <span>Card number</span>
+        <div id="card-number-element" class="field"></div>
+      </label>
+      <label>
+        <span>Expiry date</span>
+        <div id="card-expiry-element" class="field"></div>
+      </label>
+      <label>
+        <span>CVC</span>
+        <div id="card-cvc-element" class="field"></div>
+      </label>
+      <label>
+        <span>Postal code</span>
+        <input id="postal-code" name="postal_code" class="field" placeholder="Regular field placeholder" />
+      </label>
+    </div>
+    <button type="submit">Pay $25</button>
+    <div class="outcome">
+      <div class="error"></div>
+      <div class="success">
+        Success! Your Stripe token is <span class="token"></span>
+      </div>
+    </div>
+  </form>
+</body>
+
+
+    <script type="text/javascript">//<![CDATA[
+
+
+var stripe = Stripe('pk_test_6pRNASCoBOKtIshFeQd4XMUh');
+var elements = stripe.elements();
+
+var style = {
+  base: {
+    iconColor: '#666EE8',
+    color: '#31325F',
+    lineHeight: '40px',
+    fontWeight: 300,
+    fontFamily: 'Helvetica Neue',
+    fontSize: '15px',
+
+    '::placeholder': {
+      color: '#CFD7E0',
+    },
+  },
+};
+
+var cardNumberElement = elements.create('cardNumber', {
+  style: style,
+  placeholder: 'Custom card number placeholder',
+});
+cardNumberElement.mount('#card-number-element');
+
+var cardExpiryElement = elements.create('cardExpiry', {
+  style: style,
+  placeholder: 'Custom expiry date placeholder',
+});
+cardExpiryElement.mount('#card-expiry-element');
+
+var cardCvcElement = elements.create('cardCvc', {
+  style: style,
+  placeholder: 'Custom CVC placeholder',
+});
+cardCvcElement.mount('#card-cvc-element');
+
+
+function setOutcome(result) {
+  var successElement = document.querySelector('.success');
+  var errorElement = document.querySelector('.error');
+  successElement.classList.remove('visible');
+  errorElement.classList.remove('visible');
+
+  if (result.token) {
+    // In this example, we're simply displaying the token
+    successElement.querySelector('.token').textContent = result.token.id;
+    successElement.classList.add('visible');
+
+    // In a real integration, you'd submit the form with the token to your backend server
+    //var form = document.querySelector('form');
+    //form.querySelector('input[name="token"]').setAttribute('value', result.token.id);
+    //form.submit();
+  } else if (result.error) {
+    errorElement.textContent = result.error.message;
+    errorElement.classList.add('visible');
+  }
+}
+
+cardNumberElement.on('change', function(event) {
+  setOutcome(event);
+});
+
+document.querySelector('form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  var options = {
+    address_zip: document.getElementById('postal-code').value,
+  };
+  stripe.createToken(cardNumberElement, options).then(setOutcome);
+});
+
+
+
+  //]]></script>
+
+  <script>
+    // tell the embed parent frame the height of the content
+    if (window.parent && window.parent.parent){
+      window.parent.parent.postMessage(["resultsFrame", {
+        height: document.body.getBoundingClientRect().height,
+        slug: "whj357u9"
+      }], "*")
+    }
+
+    // always overwrite window.name, in case users try to set it manually
+    window.name = "result"
+  </script>
+
+    <script>
+      let allLines = []
+
+      window.addEventListener("message", (message) => {
+        if (message.data.console){
+          let insert = document.querySelector("#insert")
+          allLines.push(message.data.console.payload)
+          insert.innerHTML = allLines.join(";\r")
+
+          let result = eval.call(null, message.data.console.payload)
+          if (result !== undefined){
+            console.log(result)
+          }
+        }
+      })
+    </script>
+
+</body>
+</html>
