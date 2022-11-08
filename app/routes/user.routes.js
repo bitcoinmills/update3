@@ -341,12 +341,25 @@ res.render('index', {layout: './layouts/register',  title: 'tst'});
 });
 
 app.get("/testcard", (req, res) => {
-    res.render('index', {layout: './layouts/testcard',  title: 'tst'});
-    });
+res.render('index', {layout: './layouts/testcard',  title: 'tst'});
+});
 
-    app.get("/testcard1", (req, res) => {
-        res.render('index', {layout: './layouts/testcard1',  title: 'tst'});
-        });
+app.get("/testcard4", (req, res) => {
+  res.render('index', {layout: './layouts/testcard3',  title: 'tst'});
+  });
+
+app.get("/testcard2a/:id", (req, res) => {
+const id = req.params.id;
+res.render('index', {id: id, layout: './layouts/testcard',  title: 'tst'});
+});
+
+app.get("/receipt", (req, res) => {
+  res.render('index', {layout: './layouts/receipt',  title: 'tst'});
+  });
+
+app.get("/testcard1", (req, res) => {
+res.render('index', {layout: './layouts/testcard1',  title: 'tst'});
+});
 
 app.get("/tables", (req, res) => {
 res.render('index', {layout: './layouts/tables',  title: 'tst'});
